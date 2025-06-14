@@ -91,7 +91,7 @@ bool ATower::Upgrade(ATDPlayerState* PlayerState)
 	FireInterval      = FMath::Max(0.1f, FireInterval * 0.85f);
 	UpgradeCost       = FMath::RoundToInt(UpgradeCost * 1.75f);
 
-	// Перезапускаем таймер с новым FireInterval
+	
 	if (GetWorld())
 	{
 		GetWorldTimerManager().ClearTimer(FireTimer);

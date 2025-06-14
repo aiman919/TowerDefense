@@ -1,0 +1,173 @@
+\doxysection{AProjectile Class Reference}
+\hypertarget{class_a_projectile}{}\label{class_a_projectile}\index{AProjectile@{AProjectile}}
+
+
+Simple projectile that travels in a straight line without gravity, dealing damage to enemies and the base.  
+
+
+
+
+{\ttfamily \#include $<$Projectile.\+h$>$}
+
+Inheritance diagram for AProjectile\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_projectile}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a_projectile_a357ee75c70b57439edc64b3ad0be61ee}{AProjectile}} ()
+\item 
+void \mbox{\hyperlink{class_a_projectile_a47f5775317039a4ba6e56fc190c67edf}{Init\+Projectile}} (float In\+Damage, float In\+Speed)
+\begin{DoxyCompactList}\small\item\em Initializes the projectile\textquotesingle{}s parameters before firing. \end{DoxyCompactList}\item 
+FORCEINLINE float \mbox{\hyperlink{class_a_projectile_a15f59fb2f9c906086260b897819bb23e}{Get\+Damage}} () const
+\begin{DoxyCompactList}\small\item\em Gets the damage value of the projectile. \end{DoxyCompactList}\item 
+FORCEINLINE float \mbox{\hyperlink{class_a_projectile_a30d08f368650e36b816a41d633b3a42f}{Get\+Speed}} () const
+\begin{DoxyCompactList}\small\item\em Gets the initial speed of the projectile. \end{DoxyCompactList}\item 
+FORCEINLINE float \mbox{\hyperlink{class_a_projectile_af352ae81faef59f2590a4437f8127967}{Get\+Life\+Time}} () const
+\begin{DoxyCompactList}\small\item\em Gets the total lifetime of the projectile before it auto-\/destroys. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+USphere\+Component \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_a_projectile_a2a85f854012df5274207346e783bfcec}{Collision}} = nullptr
+\begin{DoxyCompactList}\small\item\em Collision component for detecting overlaps. \end{DoxyCompactList}\item 
+UProjectile\+Movement\+Component \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_a_projectile_af03d49cb6687cc0085ee69541a28f7fc}{Move\+Comp}} = nullptr
+\begin{DoxyCompactList}\small\item\em Handles movement logic for the projectile. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_projectile_ae97caea3145d36d3a59a9e9c19a45a85}{Damage}} = 20.f
+\begin{DoxyCompactList}\small\item\em Damage inflicted by the projectile upon hitting a target. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_projectile_aee0a30e7c017f82ebabe94ac4de304a4}{Life\+Seconds}} = 5.f
+\begin{DoxyCompactList}\small\item\em Lifetime duration before the projectile is destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple projectile that travels in a straight line without gravity, dealing damage to enemies and the base. 
+
+Optimizations\+:
+\begin{DoxyItemize}
+\item Removed empty Begin\+Play to avoid unnecessary virtual calls.
+\item Safe runtime use with null checks in Init\+Projectile.
+\item Inline getters available for testing and Blueprints. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_a_projectile_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_a_projectile_a357ee75c70b57439edc64b3ad0be61ee}\index{AProjectile@{AProjectile}!AProjectile@{AProjectile}}
+\index{AProjectile@{AProjectile}!AProjectile@{AProjectile}}
+\doxysubsubsection{\texorpdfstring{AProjectile()}{AProjectile()}}
+{\footnotesize\ttfamily \label{class_a_projectile_a357ee75c70b57439edc64b3ad0be61ee} 
+AProjectile\+::\+AProjectile (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Default constructor. 
+
+\label{doc-func-members}
+\Hypertarget{class_a_projectile_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_a_projectile_a15f59fb2f9c906086260b897819bb23e}\index{AProjectile@{AProjectile}!GetDamage@{GetDamage}}
+\index{GetDamage@{GetDamage}!AProjectile@{AProjectile}}
+\doxysubsubsection{\texorpdfstring{GetDamage()}{GetDamage()}}
+{\footnotesize\ttfamily \label{class_a_projectile_a15f59fb2f9c906086260b897819bb23e} 
+FORCEINLINE float AProjectile\+::\+Get\+Damage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the damage value of the projectile. 
+
+\begin{DoxyReturn}{Returns}
+Damage as a float. 
+\end{DoxyReturn}
+\Hypertarget{class_a_projectile_af352ae81faef59f2590a4437f8127967}\index{AProjectile@{AProjectile}!GetLifeTime@{GetLifeTime}}
+\index{GetLifeTime@{GetLifeTime}!AProjectile@{AProjectile}}
+\doxysubsubsection{\texorpdfstring{GetLifeTime()}{GetLifeTime()}}
+{\footnotesize\ttfamily \label{class_a_projectile_af352ae81faef59f2590a4437f8127967} 
+FORCEINLINE float AProjectile\+::\+Get\+Life\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the total lifetime of the projectile before it auto-\/destroys. 
+
+\begin{DoxyReturn}{Returns}
+Lifetime in seconds. 
+\end{DoxyReturn}
+\Hypertarget{class_a_projectile_a30d08f368650e36b816a41d633b3a42f}\index{AProjectile@{AProjectile}!GetSpeed@{GetSpeed}}
+\index{GetSpeed@{GetSpeed}!AProjectile@{AProjectile}}
+\doxysubsubsection{\texorpdfstring{GetSpeed()}{GetSpeed()}}
+{\footnotesize\ttfamily \label{class_a_projectile_a30d08f368650e36b816a41d633b3a42f} 
+FORCEINLINE float AProjectile\+::\+Get\+Speed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the initial speed of the projectile. 
+
+\begin{DoxyReturn}{Returns}
+Speed value if movement component exists, otherwise 0. 
+\end{DoxyReturn}
+\Hypertarget{class_a_projectile_a47f5775317039a4ba6e56fc190c67edf}\index{AProjectile@{AProjectile}!InitProjectile@{InitProjectile}}
+\index{InitProjectile@{InitProjectile}!AProjectile@{AProjectile}}
+\doxysubsubsection{\texorpdfstring{InitProjectile()}{InitProjectile()}}
+{\footnotesize\ttfamily \label{class_a_projectile_a47f5775317039a4ba6e56fc190c67edf} 
+void AProjectile\+::\+Init\+Projectile (\begin{DoxyParamCaption}\item[{float}]{In\+Damage}{, }\item[{float}]{In\+Speed}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the projectile\textquotesingle{}s parameters before firing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em In\+Damage} & Amount of damage this projectile will deal. \\
+\hline
+{\em In\+Speed} & Initial movement speed of the projectile. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_a_projectile_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_a_projectile_a2a85f854012df5274207346e783bfcec}\index{AProjectile@{AProjectile}!Collision@{Collision}}
+\index{Collision@{Collision}!AProjectile@{AProjectile}}
+\doxysubsubsection{\texorpdfstring{Collision}{Collision}}
+{\footnotesize\ttfamily \label{class_a_projectile_a2a85f854012df5274207346e783bfcec} 
+USphere\+Component\texorpdfstring{$\ast$}{*} AProjectile\+::\+Collision = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Collision component for detecting overlaps. 
+
+\Hypertarget{class_a_projectile_ae97caea3145d36d3a59a9e9c19a45a85}\index{AProjectile@{AProjectile}!Damage@{Damage}}
+\index{Damage@{Damage}!AProjectile@{AProjectile}}
+\doxysubsubsection{\texorpdfstring{Damage}{Damage}}
+{\footnotesize\ttfamily \label{class_a_projectile_ae97caea3145d36d3a59a9e9c19a45a85} 
+float AProjectile\+::\+Damage = 20.f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Damage inflicted by the projectile upon hitting a target. 
+
+\Hypertarget{class_a_projectile_aee0a30e7c017f82ebabe94ac4de304a4}\index{AProjectile@{AProjectile}!LifeSeconds@{LifeSeconds}}
+\index{LifeSeconds@{LifeSeconds}!AProjectile@{AProjectile}}
+\doxysubsubsection{\texorpdfstring{LifeSeconds}{LifeSeconds}}
+{\footnotesize\ttfamily \label{class_a_projectile_aee0a30e7c017f82ebabe94ac4de304a4} 
+float AProjectile\+::\+Life\+Seconds = 5.f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Lifetime duration before the projectile is destroyed. 
+
+\Hypertarget{class_a_projectile_af03d49cb6687cc0085ee69541a28f7fc}\index{AProjectile@{AProjectile}!MoveComp@{MoveComp}}
+\index{MoveComp@{MoveComp}!AProjectile@{AProjectile}}
+\doxysubsubsection{\texorpdfstring{MoveComp}{MoveComp}}
+{\footnotesize\ttfamily \label{class_a_projectile_af03d49cb6687cc0085ee69541a28f7fc} 
+UProjectile\+Movement\+Component\texorpdfstring{$\ast$}{*} AProjectile\+::\+Move\+Comp = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Handles movement logic for the projectile. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_projectile_8h}{Projectile.\+h}}\end{DoxyCompactItemize}

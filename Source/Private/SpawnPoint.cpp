@@ -22,7 +22,7 @@ void ASpawnPoint::BeginPlay()
 /* ---------- Public API ---------- */
 void ASpawnPoint::StartWave(int32 Size, bool bSpawnBossAtEnd /*=false*/)
 {
-    if (!GetWorld() || Size <= 0)      // безопасно для unit-теста без UWorld
+    if (!GetWorld() || Size <= 0)     
         return;
 
     WaveSize   = Size;
@@ -124,6 +124,5 @@ void ASpawnPoint::OnBossDefeated(AActor* /*DestroyedActor*/)
 void ASpawnPoint::StartNextWave()
 {
     ++CurrentWave;
-    // Пример: каждую волну +2 врага
-    // StartWave(DefaultWaveSize + CurrentWave * 2);
+   
 }

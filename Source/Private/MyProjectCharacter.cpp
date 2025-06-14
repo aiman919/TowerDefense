@@ -35,5 +35,5 @@ AMyProjectCharacter::AMyProjectCharacter()
 	TopDownCameraComponent->bUsePawnControlRotation = false;
 
 	/* ---- Tick ---- */
-	PrimaryActorTick.bCanEverTick = false;   // нет логики ― тратиться не будем
+	PrimaryActorTick.bCanEverTick = false;   
 }

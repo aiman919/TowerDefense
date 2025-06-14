@@ -1,0 +1,55 @@
+\doxysection{Projectile.\+h}
+\hypertarget{_projectile_8h_source}{}\label{_projectile_8h_source}\mbox{\hyperlink{_projectile_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GameFramework/Actor.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}GameFramework/ProjectileMovementComponent.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Projectile.generated.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }USphereComponent;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }UProjectileMovementComponent;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00020\ UCLASS()}
+\DoxyCodeLine{00021\ class\ MYPROJECT\_API\ \mbox{\hyperlink{class_a_projectile_a357ee75c70b57439edc64b3ad0be61ee}{AProjectile}}\ :\ public\ AActor}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_a_projectile_a357ee75c70b57439edc64b3ad0be61ee}{AProjectile}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_projectile_a47f5775317039a4ba6e56fc190c67edf}{InitProjectile}}(\textcolor{keywordtype}{float}\ InDamage,\ \textcolor{keywordtype}{float}\ InSpeed);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Getters\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \ \ \ \ FORCEINLINE\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_projectile_a15f59fb2f9c906086260b897819bb23e}{GetDamage}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_a_projectile_ae97caea3145d36d3a59a9e9c19a45a85}{Damage}};\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ FORCEINLINE\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_projectile_a30d08f368650e36b816a41d633b3a42f}{GetSpeed}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_a_projectile_af03d49cb6687cc0085ee69541a28f7fc}{MoveComp}}\ ?\ \mbox{\hyperlink{class_a_projectile_af03d49cb6687cc0085ee69541a28f7fc}{MoveComp}}-\/>InitialSpeed\ :\ 0.f;\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ FORCEINLINE\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_projectile_af352ae81faef59f2590a4437f8127967}{GetLifeTime}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ InitialLifeSpan;\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00061\ \ \ \ \ UPROPERTY(VisibleAnywhere)}
+\DoxyCodeLine{00062\ \ \ \ \ USphereComponent*\ \mbox{\hyperlink{class_a_projectile_a2a85f854012df5274207346e783bfcec}{Collision}}\ =\ \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \ \ \ \ UPROPERTY(VisibleAnywhere)}
+\DoxyCodeLine{00068\ \ \ \ \ UProjectileMovementComponent*\ \mbox{\hyperlink{class_a_projectile_af03d49cb6687cc0085ee69541a28f7fc}{MoveComp}}\ =\ \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \ \ UPROPERTY(EditAnywhere,\ BlueprintReadOnly,\ Category\ =\ \textcolor{stringliteral}{"{}Projectile"{}})}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_projectile_ae97caea3145d36d3a59a9e9c19a45a85}{Damage}}\ =\ 20.f;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Projectile"{}},\ meta\ =\ (ClampMin\ =\ \textcolor{stringliteral}{"{}0.1"{}}))}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_projectile_aee0a30e7c017f82ebabe94ac4de304a4}{LifeSeconds}}\ =\ 5.f;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ private:}
+\DoxyCodeLine{00093\ \ \ \ \ UFUNCTION()}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ OnOverlap(UPrimitiveComponent*\ OverlappedComp,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AActor*\ OtherActor,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UPrimitiveComponent*\ OtherComp,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int32\ OtherBodyIndex,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ bFromSweep,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ FHitResult\&\ SweepResult);}
+\DoxyCodeLine{00100\ \};}
+
+\end{DoxyCode}

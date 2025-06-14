@@ -1,0 +1,52 @@
+\doxysection{Enemy\+Boss.\+h}
+\hypertarget{_enemy_boss_8h_source}{}\label{_enemy_boss_8h_source}\mbox{\hyperlink{_enemy_boss_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_enemy_8h}{Enemy.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}EnemyBoss.generated.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00016\ UCLASS()}
+\DoxyCodeLine{00017\ class\ MYPROJECT\_API\ \mbox{\hyperlink{class_a_enemy_boss_a4191ed2fc0f14d26e27ee419adaf244a}{AEnemyBoss}}\ :\ public\ \mbox{\hyperlink{class_a_enemy_a78162cd7740ff2a86ba73ced9a4ae9be}{AEnemy}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_a_enemy_boss_a4191ed2fc0f14d26e27ee419adaf244a}{AEnemyBoss}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_enemy_boss_aa316d7a13bb827e4f8d09cc077ae4253}{Attack}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Combat"{}})}
+\DoxyCodeLine{00036\ \ \ \ \ void\ \mbox{\hyperlink{class_a_enemy_boss_a4156dcf270070f77d2d14848dae7fdce}{PerformSpecialAttack}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Getters\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ \ \ UFUNCTION(BlueprintPure,\ Category\ =\ \textcolor{stringliteral}{"{}Combat"{}})}
+\DoxyCodeLine{00045\ \ \ \ \ FORCEINLINE\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_enemy_boss_a67e6c64981bd6b7fe16edd86752a30e0}{GetSpecialAttackCooldown}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_a_enemy_boss_a8623fb82b64c30a9dbe5d5ddc678ce60}{SpecialAttackCooldown}};\ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ UFUNCTION(BlueprintPure,\ Category\ =\ \textcolor{stringliteral}{"{}Combat"{}})}
+\DoxyCodeLine{00052\ \ \ \ \ FORCEINLINE\ int32\ \mbox{\hyperlink{class_a_enemy_boss_abff0f0e8c80207d12fe0abeadd442a05}{GetMaxHealth}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_a_enemy_a5df1a51abbcec8cba9a5d8907809cbd4}{MaxHealth}};\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ UFUNCTION(BlueprintPure,\ Category\ =\ \textcolor{stringliteral}{"{}Combat"{}})}
+\DoxyCodeLine{00059\ \ \ \ \ FORCEINLINE\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_enemy_boss_a7cd294e95ccdfe1b6ac6a77b70140664}{GetLastSpecialAttackTime}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_a_enemy_boss_aef4c2da9d561557bc2c9573d01ae8266}{LastSpecialAttackTime}};\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Boss\ Stats\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ Category\ =\ \textcolor{stringliteral}{"{}Boss|Combat"{}},\ meta\ =\ (ClampMin\ =\ \textcolor{stringliteral}{"{}0"{}}))}
+\DoxyCodeLine{00068\ \ \ \ \ int32\ \mbox{\hyperlink{class_a_enemy_boss_a1f682f2afd0e2b2f0acb9391b2c3712e}{SpecialAttackDamage}}\ =\ 200;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ Category\ =\ \textcolor{stringliteral}{"{}Boss|Combat"{}},\ meta\ =\ (ClampMin\ =\ \textcolor{stringliteral}{"{}0.1"{}}))}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_enemy_boss_a8623fb82b64c30a9dbe5d5ddc678ce60}{SpecialAttackCooldown}}\ =\ 5.f;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_enemy_boss_aef4c2da9d561557bc2c9573d01ae8266}{LastSpecialAttackTime}}\ =\ -\/999.f;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ private:}
+\DoxyCodeLine{00089\ \ \ \ \ FORCEINLINE\ \textcolor{keywordtype}{bool}\ CanSpecialAttack(\textcolor{keywordtype}{float}\ CurrentTime)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00090\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (CurrentTime\ -\/\ \mbox{\hyperlink{class_a_enemy_boss_aef4c2da9d561557bc2c9573d01ae8266}{LastSpecialAttackTime}})\ >=\ \mbox{\hyperlink{class_a_enemy_boss_a8623fb82b64c30a9dbe5d5ddc678ce60}{SpecialAttackCooldown}};}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \};}
+
+\end{DoxyCode}

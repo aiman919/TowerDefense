@@ -1,0 +1,219 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Hierarchical Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Class Hierarchy}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Documentation}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}ABase Class Reference}{7}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{8}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Constructor \& Destructor Documentation}{8}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}ABase()}{8}{subsubsection.4.1.2.1}%
+\contentsline {subsection}{\numberline {4.1.3}Member Function Documentation}{8}{subsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.3.1}GetHealth()}{8}{subsubsection.4.1.3.1}%
+\contentsline {subsubsection}{\numberline {4.1.3.2}GetLifetimeReplicatedProps()}{8}{subsubsection.4.1.3.2}%
+\contentsline {subsubsection}{\numberline {4.1.3.3}IsDestroyed()}{9}{subsubsection.4.1.3.3}%
+\contentsline {subsubsection}{\numberline {4.1.3.4}OnRep\_Health()}{9}{subsubsection.4.1.3.4}%
+\contentsline {subsubsection}{\numberline {4.1.3.5}ReceiveDamage()}{9}{subsubsection.4.1.3.5}%
+\contentsline {subsubsection}{\numberline {4.1.3.6}TakeDamage()}{9}{subsubsection.4.1.3.6}%
+\contentsline {subsubsection}{\numberline {4.1.3.7}UPROPERTY()}{10}{subsubsection.4.1.3.7}%
+\contentsline {subsection}{\numberline {4.1.4}Member Data Documentation}{10}{subsection.4.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.4.1}MaxHealth}{10}{subsubsection.4.1.4.1}%
+\contentsline {section}{\numberline {4.2}AEnemy Class Reference}{10}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{12}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Constructor \& Destructor Documentation}{12}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}AEnemy()}{12}{subsubsection.4.2.2.1}%
+\contentsline {subsection}{\numberline {4.2.3}Member Function Documentation}{12}{subsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.1}ApplyDifficultyScaling()}{12}{subsubsection.4.2.3.1}%
+\contentsline {subsubsection}{\numberline {4.2.3.2}Attack()}{12}{subsubsection.4.2.3.2}%
+\contentsline {subsubsection}{\numberline {4.2.3.3}BeginPlay()}{13}{subsubsection.4.2.3.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.4}DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE()}{13}{subsubsection.4.2.3.4}%
+\contentsline {subsubsection}{\numberline {4.2.3.5}DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_OneParam()}{13}{subsubsection.4.2.3.5}%
+\contentsline {subsubsection}{\numberline {4.2.3.6}EndPlay()}{13}{subsubsection.4.2.3.6}%
+\contentsline {subsubsection}{\numberline {4.2.3.7}GetHealth()}{13}{subsubsection.4.2.3.7}%
+\contentsline {subsubsection}{\numberline {4.2.3.8}GetLastInstigator()}{13}{subsubsection.4.2.3.8}%
+\contentsline {subsubsection}{\numberline {4.2.3.9}GetLifetimeReplicatedProps()}{13}{subsubsection.4.2.3.9}%
+\contentsline {subsubsection}{\numberline {4.2.3.10}HandleDeath()}{14}{subsubsection.4.2.3.10}%
+\contentsline {subsubsection}{\numberline {4.2.3.11}IsDead()}{14}{subsubsection.4.2.3.11}%
+\contentsline {subsubsection}{\numberline {4.2.3.12}OnRep\_Health()}{14}{subsubsection.4.2.3.12}%
+\contentsline {subsubsection}{\numberline {4.2.3.13}ReceiveDamage()}{14}{subsubsection.4.2.3.13}%
+\contentsline {subsubsection}{\numberline {4.2.3.14}ReceiveDamageBP()}{14}{subsubsection.4.2.3.14}%
+\contentsline {subsubsection}{\numberline {4.2.3.15}StartAttacking()}{15}{subsubsection.4.2.3.15}%
+\contentsline {subsection}{\numberline {4.2.4}Member Data Documentation}{15}{subsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.4.1}AcceptanceRadius}{15}{subsubsection.4.2.4.1}%
+\contentsline {subsubsection}{\numberline {4.2.4.2}Armor}{15}{subsubsection.4.2.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.4.3}AttackDamage}{15}{subsubsection.4.2.4.3}%
+\contentsline {subsubsection}{\numberline {4.2.4.4}AttackRate}{15}{subsubsection.4.2.4.4}%
+\contentsline {subsubsection}{\numberline {4.2.4.5}AttackTimerHandle}{15}{subsubsection.4.2.4.5}%
+\contentsline {subsubsection}{\numberline {4.2.4.6}CurrentHealth}{16}{subsubsection.4.2.4.6}%
+\contentsline {subsubsection}{\numberline {4.2.4.7}DamageCap}{16}{subsubsection.4.2.4.7}%
+\contentsline {subsubsection}{\numberline {4.2.4.8}DamagePctPerWave}{16}{subsubsection.4.2.4.8}%
+\contentsline {subsubsection}{\numberline {4.2.4.9}HealthPctPerWave}{16}{subsubsection.4.2.4.9}%
+\contentsline {subsubsection}{\numberline {4.2.4.10}LastDamageInstigator}{16}{subsubsection.4.2.4.10}%
+\contentsline {subsubsection}{\numberline {4.2.4.11}MaxHealth}{16}{subsubsection.4.2.4.11}%
+\contentsline {subsubsection}{\numberline {4.2.4.12}MaxHealthCap}{16}{subsubsection.4.2.4.12}%
+\contentsline {subsubsection}{\numberline {4.2.4.13}MoneyReward}{16}{subsubsection.4.2.4.13}%
+\contentsline {subsubsection}{\numberline {4.2.4.14}MoveSpeed}{17}{subsubsection.4.2.4.14}%
+\contentsline {subsubsection}{\numberline {4.2.4.15}OnDeathEvt}{17}{subsubsection.4.2.4.15}%
+\contentsline {subsubsection}{\numberline {4.2.4.16}OnHealthChanged}{17}{subsubsection.4.2.4.16}%
+\contentsline {subsubsection}{\numberline {4.2.4.17}TargetActor}{17}{subsubsection.4.2.4.17}%
+\contentsline {section}{\numberline {4.3}AEnemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Armored Class Reference}{17}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{19}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Constructor \& Destructor Documentation}{19}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}AEnemyArmored()}{19}{subsubsection.4.3.2.1}%
+\contentsline {subsection}{\numberline {4.3.3}Member Function Documentation}{19}{subsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3.1}ApplyDifficultyScaling()}{19}{subsubsection.4.3.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.3.2}DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_OneParam()}{20}{subsubsection.4.3.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3.3}ReceiveDamage()}{20}{subsubsection.4.3.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Member Data Documentation}{20}{subsection.4.3.4}%
+\contentsline {subsubsection}{\numberline {4.3.4.1}OnArmorChanged}{20}{subsubsection.4.3.4.1}%
+\contentsline {section}{\numberline {4.4}AEnemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Boss Class Reference}{21}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{22}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Constructor \& Destructor Documentation}{23}{subsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}AEnemyBoss()}{23}{subsubsection.4.4.2.1}%
+\contentsline {subsection}{\numberline {4.4.3}Member Function Documentation}{23}{subsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.3.1}Attack()}{23}{subsubsection.4.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.4.3.2}GetLastSpecialAttackTime()}{23}{subsubsection.4.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.4.3.3}GetMaxHealth()}{23}{subsubsection.4.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.4.3.4}GetSpecialAttackCooldown()}{23}{subsubsection.4.4.3.4}%
+\contentsline {subsubsection}{\numberline {4.4.3.5}PerformSpecialAttack()}{24}{subsubsection.4.4.3.5}%
+\contentsline {subsection}{\numberline {4.4.4}Member Data Documentation}{24}{subsection.4.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.4.1}LastSpecialAttackTime}{24}{subsubsection.4.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.4.2}SpecialAttackCooldown}{24}{subsubsection.4.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.4.3}SpecialAttackDamage}{24}{subsubsection.4.4.4.3}%
+\contentsline {section}{\numberline {4.5}AEnemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fast Class Reference}{24}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{26}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Constructor \& Destructor Documentation}{26}{subsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.1}AEnemyFast()}{26}{subsubsection.4.5.2.1}%
+\contentsline {subsection}{\numberline {4.5.3}Member Function Documentation}{26}{subsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.3.1}GetMoveSpeedFast()}{26}{subsubsection.4.5.3.1}%
+\contentsline {section}{\numberline {4.6}AMy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Project\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Character Class Reference}{27}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Detailed Description}{27}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Constructor \& Destructor Documentation}{27}{subsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.2.1}AMyProjectCharacter()}{27}{subsubsection.4.6.2.1}%
+\contentsline {subsection}{\numberline {4.6.3}Member Function Documentation}{27}{subsection.4.6.3}%
+\contentsline {subsubsection}{\numberline {4.6.3.1}GetCameraBoom()}{27}{subsubsection.4.6.3.1}%
+\contentsline {subsubsection}{\numberline {4.6.3.2}GetTopDownCameraComponent()}{28}{subsubsection.4.6.3.2}%
+\contentsline {section}{\numberline {4.7}AMy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Project\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mode Class Reference}{28}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Detailed Description}{28}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Member Function Documentation}{29}{subsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.2.1}BeginPlay()}{29}{subsubsection.4.7.2.1}%
+\contentsline {subsubsection}{\numberline {4.7.2.2}CalcInitialWaveSize()}{29}{subsubsection.4.7.2.2}%
+\contentsline {section}{\numberline {4.8}AMy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Project\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Player\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Class Reference}{29}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Detailed Description}{30}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Constructor \& Destructor Documentation}{30}{subsection.4.8.2}%
+\contentsline {subsubsection}{\numberline {4.8.2.1}AMyProjectPlayerController()}{30}{subsubsection.4.8.2.1}%
+\contentsline {subsection}{\numberline {4.8.3}Member Function Documentation}{30}{subsection.4.8.3}%
+\contentsline {subsubsection}{\numberline {4.8.3.1}SetupInputComponent()}{30}{subsubsection.4.8.3.1}%
+\contentsline {subsection}{\numberline {4.8.4}Member Data Documentation}{31}{subsection.4.8.4}%
+\contentsline {subsubsection}{\numberline {4.8.4.1}DefaultMappingContext}{31}{subsubsection.4.8.4.1}%
+\contentsline {subsubsection}{\numberline {4.8.4.2}FXCursor}{31}{subsubsection.4.8.4.2}%
+\contentsline {subsubsection}{\numberline {4.8.4.3}ShortPressThreshold}{31}{subsubsection.4.8.4.3}%
+\contentsline {subsubsection}{\numberline {4.8.4.4}SpawnTowerAction}{31}{subsubsection.4.8.4.4}%
+\contentsline {subsubsection}{\numberline {4.8.4.5}TowerToSpawn}{31}{subsubsection.4.8.4.5}%
+\contentsline {section}{\numberline {4.9}AProjectile Class Reference}{31}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Detailed Description}{32}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.9.2}Constructor \& Destructor Documentation}{32}{subsection.4.9.2}%
+\contentsline {subsubsection}{\numberline {4.9.2.1}AProjectile()}{32}{subsubsection.4.9.2.1}%
+\contentsline {subsection}{\numberline {4.9.3}Member Function Documentation}{33}{subsection.4.9.3}%
+\contentsline {subsubsection}{\numberline {4.9.3.1}GetDamage()}{33}{subsubsection.4.9.3.1}%
+\contentsline {subsubsection}{\numberline {4.9.3.2}GetLifeTime()}{33}{subsubsection.4.9.3.2}%
+\contentsline {subsubsection}{\numberline {4.9.3.3}GetSpeed()}{33}{subsubsection.4.9.3.3}%
+\contentsline {subsubsection}{\numberline {4.9.3.4}InitProjectile()}{33}{subsubsection.4.9.3.4}%
+\contentsline {subsection}{\numberline {4.9.4}Member Data Documentation}{34}{subsection.4.9.4}%
+\contentsline {subsubsection}{\numberline {4.9.4.1}Collision}{34}{subsubsection.4.9.4.1}%
+\contentsline {subsubsection}{\numberline {4.9.4.2}Damage}{34}{subsubsection.4.9.4.2}%
+\contentsline {subsubsection}{\numberline {4.9.4.3}LifeSeconds}{34}{subsubsection.4.9.4.3}%
+\contentsline {subsubsection}{\numberline {4.9.4.4}MoveComp}{34}{subsubsection.4.9.4.4}%
+\contentsline {section}{\numberline {4.10}ASpawn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Point Class Reference}{34}{section.4.10}%
+\contentsline {subsection}{\numberline {4.10.1}Detailed Description}{35}{subsection.4.10.1}%
+\contentsline {subsection}{\numberline {4.10.2}Constructor \& Destructor Documentation}{36}{subsection.4.10.2}%
+\contentsline {subsubsection}{\numberline {4.10.2.1}ASpawnPoint()}{36}{subsubsection.4.10.2.1}%
+\contentsline {subsection}{\numberline {4.10.3}Member Function Documentation}{36}{subsection.4.10.3}%
+\contentsline {subsubsection}{\numberline {4.10.3.1}BeginPlay()}{36}{subsubsection.4.10.3.1}%
+\contentsline {subsubsection}{\numberline {4.10.3.2}GetNextEnemyStrengthMultiplier()}{36}{subsubsection.4.10.3.2}%
+\contentsline {subsubsection}{\numberline {4.10.3.3}OnEnemySpawnedBP()}{36}{subsubsection.4.10.3.3}%
+\contentsline {subsubsection}{\numberline {4.10.3.4}StartWave()}{36}{subsubsection.4.10.3.4}%
+\contentsline {subsubsection}{\numberline {4.10.3.5}StopWave()}{37}{subsubsection.4.10.3.5}%
+\contentsline {subsection}{\numberline {4.10.4}Member Data Documentation}{37}{subsection.4.10.4}%
+\contentsline {subsubsection}{\numberline {4.10.4.1}ArmoredChance}{37}{subsubsection.4.10.4.1}%
+\contentsline {subsubsection}{\numberline {4.10.4.2}ArmoredEnemyClass}{37}{subsubsection.4.10.4.2}%
+\contentsline {subsubsection}{\numberline {4.10.4.3}bAutoStartWave}{37}{subsubsection.4.10.4.3}%
+\contentsline {subsubsection}{\numberline {4.10.4.4}BossEnemyClass}{37}{subsubsection.4.10.4.4}%
+\contentsline {subsubsection}{\numberline {4.10.4.5}CommonEnemyTypes}{37}{subsubsection.4.10.4.5}%
+\contentsline {subsubsection}{\numberline {4.10.4.6}CommonWeights}{38}{subsubsection.4.10.4.6}%
+\contentsline {subsubsection}{\numberline {4.10.4.7}DefaultWaveSize}{38}{subsubsection.4.10.4.7}%
+\contentsline {subsubsection}{\numberline {4.10.4.8}FastChance}{38}{subsubsection.4.10.4.8}%
+\contentsline {subsubsection}{\numberline {4.10.4.9}FastEnemyClass}{38}{subsubsection.4.10.4.9}%
+\contentsline {subsubsection}{\numberline {4.10.4.10}SpawnInterval}{38}{subsubsection.4.10.4.10}%
+\contentsline {subsubsection}{\numberline {4.10.4.11}SpawnOffsetDistance}{38}{subsubsection.4.10.4.11}%
+\contentsline {subsubsection}{\numberline {4.10.4.12}SpawnRoot}{38}{subsubsection.4.10.4.12}%
+\contentsline {subsubsection}{\numberline {4.10.4.13}StrengthIncreasePerSpawn}{39}{subsubsection.4.10.4.13}%
+\contentsline {section}{\numberline {4.11}ATDPlayer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State Class Reference}{39}{section.4.11}%
+\contentsline {subsection}{\numberline {4.11.1}Detailed Description}{39}{subsection.4.11.1}%
+\contentsline {subsection}{\numberline {4.11.2}Constructor \& Destructor Documentation}{40}{subsection.4.11.2}%
+\contentsline {subsubsection}{\numberline {4.11.2.1}ATDPlayerState()}{40}{subsubsection.4.11.2.1}%
+\contentsline {subsection}{\numberline {4.11.3}Member Function Documentation}{40}{subsection.4.11.3}%
+\contentsline {subsubsection}{\numberline {4.11.3.1}AddMoney()}{40}{subsubsection.4.11.3.1}%
+\contentsline {subsubsection}{\numberline {4.11.3.2}GetLifetimeReplicatedProps()}{40}{subsubsection.4.11.3.2}%
+\contentsline {subsubsection}{\numberline {4.11.3.3}GetMoney()}{40}{subsubsection.4.11.3.3}%
+\contentsline {subsubsection}{\numberline {4.11.3.4}OnRep\_Money()}{40}{subsubsection.4.11.3.4}%
+\contentsline {subsubsection}{\numberline {4.11.3.5}SpendMoney()}{41}{subsubsection.4.11.3.5}%
+\contentsline {subsection}{\numberline {4.11.4}Member Data Documentation}{41}{subsection.4.11.4}%
+\contentsline {subsubsection}{\numberline {4.11.4.1}OnMoneyChanged}{41}{subsubsection.4.11.4.1}%
+\contentsline {section}{\numberline {4.12}ATower Class Reference}{41}{section.4.12}%
+\contentsline {subsection}{\numberline {4.12.1}Detailed Description}{42}{subsection.4.12.1}%
+\contentsline {subsection}{\numberline {4.12.2}Constructor \& Destructor Documentation}{42}{subsection.4.12.2}%
+\contentsline {subsubsection}{\numberline {4.12.2.1}ATower()}{42}{subsubsection.4.12.2.1}%
+\contentsline {subsection}{\numberline {4.12.3}Member Function Documentation}{43}{subsection.4.12.3}%
+\contentsline {subsubsection}{\numberline {4.12.3.1}BeginPlay()}{43}{subsubsection.4.12.3.1}%
+\contentsline {subsubsection}{\numberline {4.12.3.2}GetDamage()}{43}{subsubsection.4.12.3.2}%
+\contentsline {subsubsection}{\numberline {4.12.3.3}GetFireInterval()}{43}{subsubsection.4.12.3.3}%
+\contentsline {subsubsection}{\numberline {4.12.3.4}GetTowerLevel()}{43}{subsubsection.4.12.3.4}%
+\contentsline {subsubsection}{\numberline {4.12.3.5}Upgrade()}{43}{subsubsection.4.12.3.5}%
+\contentsline {subsection}{\numberline {4.12.4}Member Data Documentation}{44}{subsection.4.12.4}%
+\contentsline {subsubsection}{\numberline {4.12.4.1}FireInterval}{44}{subsubsection.4.12.4.1}%
+\contentsline {subsubsection}{\numberline {4.12.4.2}FireRange}{44}{subsubsection.4.12.4.2}%
+\contentsline {subsubsection}{\numberline {4.12.4.3}Level}{44}{subsubsection.4.12.4.3}%
+\contentsline {subsubsection}{\numberline {4.12.4.4}Muzzle}{44}{subsubsection.4.12.4.4}%
+\contentsline {subsubsection}{\numberline {4.12.4.5}ProjectileClass}{44}{subsubsection.4.12.4.5}%
+\contentsline {subsubsection}{\numberline {4.12.4.6}ProjectileDamage}{44}{subsubsection.4.12.4.6}%
+\contentsline {subsubsection}{\numberline {4.12.4.7}ProjectileSpeed}{45}{subsubsection.4.12.4.7}%
+\contentsline {subsubsection}{\numberline {4.12.4.8}TowerMesh}{45}{subsubsection.4.12.4.8}%
+\contentsline {subsubsection}{\numberline {4.12.4.9}UpgradeCost}{45}{subsubsection.4.12.4.9}%
+\contentsline {chapter}{\numberline {5}File Documentation}{47}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Base.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{47}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Base.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{47}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Enemy.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{48}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Enemy.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{48}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Armored.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{50}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Armored.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{50}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Boss.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{50}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Boss.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{51}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fast.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{51}{section.5.9}%
+\contentsline {section}{\numberline {5.10}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fast.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{52}{section.5.10}%
+\contentsline {section}{\numberline {5.11}My\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Project.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{52}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Detailed Description}{52}{subsection.5.11.1}%
+\contentsline {subsection}{\numberline {5.11.2}Function Documentation}{52}{subsection.5.11.2}%
+\contentsline {subsubsection}{\numberline {5.11.2.1}DECLARE\_LOG\_CATEGORY\_EXTERN()}{52}{subsubsection.5.11.2.1}%
+\contentsline {subsubsection}{\numberline {5.11.2.2}MyProjectLog()}{53}{subsubsection.5.11.2.2}%
+\contentsline {section}{\numberline {5.12}My\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Project.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{53}{section.5.12}%
+\contentsline {section}{\numberline {5.13}My\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Project\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Character.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{53}{section.5.13}%
+\contentsline {section}{\numberline {5.14}My\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Project\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Character.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{53}{section.5.14}%
+\contentsline {section}{\numberline {5.15}My\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Project\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mode.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{54}{section.5.15}%
+\contentsline {section}{\numberline {5.16}My\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Project\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mode.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{54}{section.5.16}%
+\contentsline {section}{\numberline {5.17}My\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Project\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Player\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{54}{section.5.17}%
+\contentsline {subsection}{\numberline {5.17.1}Function Documentation}{55}{subsection.5.17.1}%
+\contentsline {subsubsection}{\numberline {5.17.1.1}DECLARE\_LOG\_CATEGORY\_EXTERN()}{55}{subsubsection.5.17.1.1}%
+\contentsline {section}{\numberline {5.18}My\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Project\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Player\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{55}{section.5.18}%
+\contentsline {section}{\numberline {5.19}Projectile.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{56}{section.5.19}%
+\contentsline {section}{\numberline {5.20}Projectile.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{56}{section.5.20}%
+\contentsline {section}{\numberline {5.21}Spawn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Point.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{57}{section.5.21}%
+\contentsline {section}{\numberline {5.22}Spawn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Point.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{57}{section.5.22}%
+\contentsline {section}{\numberline {5.23}TDPlayer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{58}{section.5.23}%
+\contentsline {subsection}{\numberline {5.23.1}Function Documentation}{59}{subsection.5.23.1}%
+\contentsline {subsubsection}{\numberline {5.23.1.1}DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_OneParam()}{59}{subsubsection.5.23.1.1}%
+\contentsline {section}{\numberline {5.24}TDPlayer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{59}{section.5.24}%
+\contentsline {section}{\numberline {5.25}Tower.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{60}{section.5.25}%
+\contentsline {section}{\numberline {5.26}Tower.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{60}{section.5.26}%

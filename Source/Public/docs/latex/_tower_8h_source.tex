@@ -1,0 +1,82 @@
+\doxysection{Tower.\+h}
+\hypertarget{_tower_8h_source}{}\label{_tower_8h_source}\mbox{\hyperlink{_tower_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GameFramework/Actor.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Tower.generated.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }USceneComponent;}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }UStaticMeshComponent;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_a_projectile}{AProjectile}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_a_enemy}{AEnemy}};}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_a_t_d_player_state}{ATDPlayerState}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00022\ UCLASS()}
+\DoxyCodeLine{00023\ class\ MYPROJECT\_API\ \mbox{\hyperlink{class_a_tower_ae7c0e44340c8f10139a5efa1e204f2f7}{ATower}}\ :\ public\ AActor}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_a_tower_ae7c0e44340c8f10139a5efa1e204f2f7}{ATower}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Getters\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ UFUNCTION(BlueprintPure,\ Category\ =\ \textcolor{stringliteral}{"{}Tower"{}})}
+\DoxyCodeLine{00038\ \ \ \ \ FORCEINLINE\ int32\ \mbox{\hyperlink{class_a_tower_ade0f8324c2282e43b822bff120a22043}{GetTowerLevel}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_a_tower_aed77e9b2d9c7b632fb95c557b4547503}{Level}};\ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ \ \ UFUNCTION(BlueprintPure,\ Category\ =\ \textcolor{stringliteral}{"{}Tower"{}})}
+\DoxyCodeLine{00045\ \ \ \ \ FORCEINLINE\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_tower_a588ca30b3dffbd90201c11e496a68c7c}{GetDamage}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_a_tower_a936b994b42c7ff99432ac98490dad5a7}{ProjectileDamage}};\ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ UFUNCTION(BlueprintPure,\ Category\ =\ \textcolor{stringliteral}{"{}Tower"{}})}
+\DoxyCodeLine{00052\ \ \ \ \ FORCEINLINE\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_tower_ad3a7aeaed5631750ca1d2a6a9b9e4b09}{GetFireInterval}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_a_tower_a5b7f889a550215b5d453609234b5551d}{FireInterval}};\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00060\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Tower|Upgrade"{}})}
+\DoxyCodeLine{00061\ \ \ \ \ bool\ \mbox{\hyperlink{class_a_tower_a015701f551f3e7e736161d6e52998a50}{Upgrade}}(\mbox{\hyperlink{class_a_t_d_player_state}{ATDPlayerState}}*\ PlayerState);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ protected:}
+\DoxyCodeLine{00065\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_tower_a6099eb4432fdaa503bb4c99466657a83}{BeginPlay}}()\ override;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Components\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \ \ \ \ UPROPERTY(VisibleAnywhere)}
+\DoxyCodeLine{00071\ \ \ \ \ UStaticMeshComponent*\ \mbox{\hyperlink{class_a_tower_aef41cfc0cf045f746fff6483c959fd10}{TowerMesh}}\ =\ \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ \ \ \ \ UPROPERTY(VisibleAnywhere)}
+\DoxyCodeLine{00075\ \ \ \ \ USceneComponent*\ \mbox{\hyperlink{class_a_tower_aac93dac8b1fb80a2ef341073708ff312}{Muzzle}}\ =\ \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Combat\ Settings\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Tower|Combat"{}},\ meta\ =\ (ClampMin\ =\ \textcolor{stringliteral}{"{}100"{}}))}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_tower_a15cd93bc6b3028c3a1ed22b0ede3b3b0}{FireRange}}\ =\ 1500.f;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00084\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Tower|Combat"{}},\ meta\ =\ (ClampMin\ =\ \textcolor{stringliteral}{"{}0.05"{}}))}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_tower_a5b7f889a550215b5d453609234b5551d}{FireInterval}}\ =\ 1.f;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00088\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Tower|Combat"{}})}
+\DoxyCodeLine{00089\ \ \ \ \ TSubclassOf<\mbox{\hyperlink{class_a_projectile}{AProjectile}}>\ \mbox{\hyperlink{class_a_tower_a5cbeeaa9d74d59ab788c9437aced82fc}{ProjectileClass}};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00092\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Tower|Combat"{}})}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_tower_a936b994b42c7ff99432ac98490dad5a7}{ProjectileDamage}}\ =\ 20.f;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00096\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Tower|Combat"{}})}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_tower_a32642ca4d83be54dc132ed8ceae32569}{ProjectileSpeed}}\ =\ 2000.f;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Upgrade\ Settings\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00102\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Tower|Upgrade"{}})}
+\DoxyCodeLine{00103\ \ \ \ \ int32\ \mbox{\hyperlink{class_a_tower_abf0e519d1aec9dde5bf0a5dc872af45b}{UpgradeCost}}\ =\ 50;}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00106\ \ \ \ \ UPROPERTY(VisibleAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Tower|Upgrade"{}})}
+\DoxyCodeLine{00107\ \ \ \ \ int32\ \mbox{\hyperlink{class_a_tower_aed77e9b2d9c7b632fb95c557b4547503}{Level}}\ =\ 1;}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ private:}
+\DoxyCodeLine{00111\ \ \ \ \ FTimerHandle\ FireTimer;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ TryFire();}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{class_a_enemy}{AEnemy}}*\ AcquireTarget()\ const;}
+\DoxyCodeLine{00124\ \};}
+
+\end{DoxyCode}

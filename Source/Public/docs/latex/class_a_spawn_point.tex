@@ -1,0 +1,256 @@
+\doxysection{ASpawn\+Point Class Reference}
+\hypertarget{class_a_spawn_point}{}\label{class_a_spawn_point}\index{ASpawnPoint@{ASpawnPoint}}
+
+
+Manages enemy wave spawning logic, including types, timing, and strength scaling.  
+
+
+
+
+{\ttfamily \#include $<$Spawn\+Point.\+h$>$}
+
+Inheritance diagram for ASpawn\+Point\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_spawn_point}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a_spawn_point_a6151d03b817bc099006e4459ace197bb}{ASpawn\+Point}} ()
+\item 
+void \mbox{\hyperlink{class_a_spawn_point_ab0c2da6c3d5a029ca1e2f21dc559daea}{Start\+Wave}} (int32 Size, bool b\+Spawn\+Boss\+At\+End=false)
+\begin{DoxyCompactList}\small\item\em Starts an enemy wave of specified size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_spawn_point_a7cefb8450869b2fcffe44d02eebe865c}{Stop\+Wave}} ()
+\begin{DoxyCompactList}\small\item\em Stops the currently active wave. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_spawn_point_af4e0a27018ce52b0a8a04a3d7835216e}{Get\+Next\+Enemy\+Strength\+Multiplier}} () const
+\begin{DoxyCompactList}\small\item\em Calculates the strength multiplier for the next enemy to spawn. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_spawn_point_a9331aefeea87d84944aecfe78f41e0d8}{On\+Enemy\+Spawned\+BP}} (\mbox{\hyperlink{class_a_enemy}{AEnemy}} \texorpdfstring{$\ast$}{*}Enemy, float Applied\+Multiplier)
+\begin{DoxyCompactList}\small\item\em Event triggered in Blueprints when an enemy is spawned. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_a_spawn_point_ab573d5d3cd950259193979d0cccccb38}{b\+Auto\+Start\+Wave}} = false
+\begin{DoxyCompactList}\small\item\em If true, wave starts automatically on Begin\+Play. \end{DoxyCompactList}\item 
+int32 \mbox{\hyperlink{class_a_spawn_point_a67f8296baa80d193e36e2532a061ab09}{Default\+Wave\+Size}} = 5
+\begin{DoxyCompactList}\small\item\em Default size of the wave if auto-\/start is enabled. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_spawn_point_a7a826658a17df69a5f6db7f0935f721d}{Strength\+Increase\+Per\+Spawn}} = 0.\+05f
+\begin{DoxyCompactList}\small\item\em Strength multiplier added for each newly spawned enemy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_a_spawn_point_a029015a9b369894d2f16413e7ced58f5}{Begin\+Play}} () override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TArray$<$ TSubclass\+Of$<$ \mbox{\hyperlink{class_a_enemy}{AEnemy}} $>$ $>$ \mbox{\hyperlink{class_a_spawn_point_a67940639df467f15215951f57b73e095}{Common\+Enemy\+Types}}
+\item 
+TArray$<$ int32 $>$ \mbox{\hyperlink{class_a_spawn_point_a050588d331990218a95b7f8097354d4f}{Common\+Weights}}
+\item 
+TSubclass\+Of$<$ \mbox{\hyperlink{class_a_enemy}{AEnemy}} $>$ \mbox{\hyperlink{class_a_spawn_point_a196bdfaf6bd10b9a8e2737ab3e981471}{Armored\+Enemy\+Class}}
+\item 
+TSubclass\+Of$<$ \mbox{\hyperlink{class_a_enemy}{AEnemy}} $>$ \mbox{\hyperlink{class_a_spawn_point_ad51ebdad7fa561b80337bc64d20a4251}{Fast\+Enemy\+Class}}
+\item 
+TSubclass\+Of$<$ \mbox{\hyperlink{class_a_enemy}{AEnemy}} $>$ \mbox{\hyperlink{class_a_spawn_point_a633290be58d28aa56a4aa019863d4627}{Boss\+Enemy\+Class}}
+\item 
+float \mbox{\hyperlink{class_a_spawn_point_a481911a9f5f45c277febcdf1cbf3e064}{Armored\+Chance}} = 0.\+15f
+\item 
+float \mbox{\hyperlink{class_a_spawn_point_ac9be27e8b90b936e560c517715aff286}{Fast\+Chance}} = 0.\+15f
+\item 
+float \mbox{\hyperlink{class_a_spawn_point_aea917a45622a3f1a291a07fe3cb9b5c8}{Spawn\+Interval}} = 1.f
+\item 
+float \mbox{\hyperlink{class_a_spawn_point_a113c4c01047202051f7d4343d38097f5}{Spawn\+Offset\+Distance}} = 100.f
+\item 
+UScene\+Component \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_a_spawn_point_a70eb70ee97484844bd2b8d3f9f0f5809}{Spawn\+Root}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages enemy wave spawning logic, including types, timing, and strength scaling. 
+
+Features\+:
+\begin{DoxyItemize}
+\item Supports automatic wave launching and wave customization.
+\item Dynamically chooses enemy types with probability weights.
+\item Supports boss waves and strength scaling per enemy spawn. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_a_spawn_point_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_a_spawn_point_a6151d03b817bc099006e4459ace197bb}\index{ASpawnPoint@{ASpawnPoint}!ASpawnPoint@{ASpawnPoint}}
+\index{ASpawnPoint@{ASpawnPoint}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{ASpawnPoint()}{ASpawnPoint()}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_a6151d03b817bc099006e4459ace197bb} 
+ASpawn\+Point\+::\+ASpawn\+Point (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Default constructor. 
+
+\label{doc-func-members}
+\Hypertarget{class_a_spawn_point_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_a_spawn_point_a029015a9b369894d2f16413e7ced58f5}\index{ASpawnPoint@{ASpawnPoint}!BeginPlay@{BeginPlay}}
+\index{BeginPlay@{BeginPlay}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{BeginPlay()}{BeginPlay()}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_a029015a9b369894d2f16413e7ced58f5} 
+virtual void ASpawn\+Point\+::\+Begin\+Play (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Called when the game starts. \Hypertarget{class_a_spawn_point_af4e0a27018ce52b0a8a04a3d7835216e}\index{ASpawnPoint@{ASpawnPoint}!GetNextEnemyStrengthMultiplier@{GetNextEnemyStrengthMultiplier}}
+\index{GetNextEnemyStrengthMultiplier@{GetNextEnemyStrengthMultiplier}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{GetNextEnemyStrengthMultiplier()}{GetNextEnemyStrengthMultiplier()}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_af4e0a27018ce52b0a8a04a3d7835216e} 
+float ASpawn\+Point\+::\+Get\+Next\+Enemy\+Strength\+Multiplier (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Calculates the strength multiplier for the next enemy to spawn. 
+
+\begin{DoxyReturn}{Returns}
+Multiplier as a float. 
+\end{DoxyReturn}
+\Hypertarget{class_a_spawn_point_a9331aefeea87d84944aecfe78f41e0d8}\index{ASpawnPoint@{ASpawnPoint}!OnEnemySpawnedBP@{OnEnemySpawnedBP}}
+\index{OnEnemySpawnedBP@{OnEnemySpawnedBP}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{OnEnemySpawnedBP()}{OnEnemySpawnedBP()}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_a9331aefeea87d84944aecfe78f41e0d8} 
+void ASpawn\+Point\+::\+On\+Enemy\+Spawned\+BP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_enemy}{AEnemy}} \texorpdfstring{$\ast$}{*}}]{Enemy}{, }\item[{float}]{Applied\+Multiplier}{}\end{DoxyParamCaption})}
+
+
+
+Event triggered in Blueprints when an enemy is spawned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Enemy} & The spawned enemy instance. \\
+\hline
+{\em Applied\+Multiplier} & The strength multiplier applied to this enemy. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_a_spawn_point_ab0c2da6c3d5a029ca1e2f21dc559daea}\index{ASpawnPoint@{ASpawnPoint}!StartWave@{StartWave}}
+\index{StartWave@{StartWave}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{StartWave()}{StartWave()}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_ab0c2da6c3d5a029ca1e2f21dc559daea} 
+void ASpawn\+Point\+::\+Start\+Wave (\begin{DoxyParamCaption}\item[{int32}]{Size}{, }\item[{bool}]{b\+Spawn\+Boss\+At\+End}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Starts an enemy wave of specified size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Size} & Number of enemies to spawn in the wave. \\
+\hline
+{\em b\+Spawn\+Boss\+At\+End} & Whether to spawn a boss at the end of the wave. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_a_spawn_point_a7cefb8450869b2fcffe44d02eebe865c}\index{ASpawnPoint@{ASpawnPoint}!StopWave@{StopWave}}
+\index{StopWave@{StopWave}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{StopWave()}{StopWave()}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_a7cefb8450869b2fcffe44d02eebe865c} 
+void ASpawn\+Point\+::\+Stop\+Wave (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Stops the currently active wave. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_a_spawn_point_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_a_spawn_point_a481911a9f5f45c277febcdf1cbf3e064}\index{ASpawnPoint@{ASpawnPoint}!ArmoredChance@{ArmoredChance}}
+\index{ArmoredChance@{ArmoredChance}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{ArmoredChance}{ArmoredChance}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_a481911a9f5f45c277febcdf1cbf3e064} 
+float ASpawn\+Point\+::\+Armored\+Chance = 0.\+15f\hspace{0.3cm}{\ttfamily [protected]}}
+
+Chance of spawning an armored enemy (0.\+0 to 1.\+0). \Hypertarget{class_a_spawn_point_a196bdfaf6bd10b9a8e2737ab3e981471}\index{ASpawnPoint@{ASpawnPoint}!ArmoredEnemyClass@{ArmoredEnemyClass}}
+\index{ArmoredEnemyClass@{ArmoredEnemyClass}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{ArmoredEnemyClass}{ArmoredEnemyClass}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_a196bdfaf6bd10b9a8e2737ab3e981471} 
+TSubclass\+Of$<$\mbox{\hyperlink{class_a_enemy}{AEnemy}}$>$ ASpawn\+Point\+::\+Armored\+Enemy\+Class\hspace{0.3cm}{\ttfamily [protected]}}
+
+Armored enemy class. \Hypertarget{class_a_spawn_point_ab573d5d3cd950259193979d0cccccb38}\index{ASpawnPoint@{ASpawnPoint}!bAutoStartWave@{bAutoStartWave}}
+\index{bAutoStartWave@{bAutoStartWave}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{bAutoStartWave}{bAutoStartWave}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_ab573d5d3cd950259193979d0cccccb38} 
+bool ASpawn\+Point\+::b\+Auto\+Start\+Wave = false}
+
+
+
+If true, wave starts automatically on Begin\+Play. 
+
+\Hypertarget{class_a_spawn_point_a633290be58d28aa56a4aa019863d4627}\index{ASpawnPoint@{ASpawnPoint}!BossEnemyClass@{BossEnemyClass}}
+\index{BossEnemyClass@{BossEnemyClass}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{BossEnemyClass}{BossEnemyClass}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_a633290be58d28aa56a4aa019863d4627} 
+TSubclass\+Of$<$\mbox{\hyperlink{class_a_enemy}{AEnemy}}$>$ ASpawn\+Point\+::\+Boss\+Enemy\+Class\hspace{0.3cm}{\ttfamily [protected]}}
+
+Boss enemy class. \Hypertarget{class_a_spawn_point_a67940639df467f15215951f57b73e095}\index{ASpawnPoint@{ASpawnPoint}!CommonEnemyTypes@{CommonEnemyTypes}}
+\index{CommonEnemyTypes@{CommonEnemyTypes}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{CommonEnemyTypes}{CommonEnemyTypes}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_a67940639df467f15215951f57b73e095} 
+TArray$<$TSubclass\+Of$<$\mbox{\hyperlink{class_a_enemy}{AEnemy}}$>$ $>$ ASpawn\+Point\+::\+Common\+Enemy\+Types\hspace{0.3cm}{\ttfamily [protected]}}
+
+List of regular enemy types that can be spawned. \Hypertarget{class_a_spawn_point_a050588d331990218a95b7f8097354d4f}\index{ASpawnPoint@{ASpawnPoint}!CommonWeights@{CommonWeights}}
+\index{CommonWeights@{CommonWeights}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{CommonWeights}{CommonWeights}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_a050588d331990218a95b7f8097354d4f} 
+TArray$<$int32$>$ ASpawn\+Point\+::\+Common\+Weights\hspace{0.3cm}{\ttfamily [protected]}}
+
+Optional weighting list corresponding to Common\+Enemy\+Types. \Hypertarget{class_a_spawn_point_a67f8296baa80d193e36e2532a061ab09}\index{ASpawnPoint@{ASpawnPoint}!DefaultWaveSize@{DefaultWaveSize}}
+\index{DefaultWaveSize@{DefaultWaveSize}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{DefaultWaveSize}{DefaultWaveSize}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_a67f8296baa80d193e36e2532a061ab09} 
+int32 ASpawn\+Point\+::\+Default\+Wave\+Size = 5}
+
+
+
+Default size of the wave if auto-\/start is enabled. 
+
+\Hypertarget{class_a_spawn_point_ac9be27e8b90b936e560c517715aff286}\index{ASpawnPoint@{ASpawnPoint}!FastChance@{FastChance}}
+\index{FastChance@{FastChance}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{FastChance}{FastChance}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_ac9be27e8b90b936e560c517715aff286} 
+float ASpawn\+Point\+::\+Fast\+Chance = 0.\+15f\hspace{0.3cm}{\ttfamily [protected]}}
+
+Chance of spawning a fast enemy (0.\+0 to 1.\+0). \Hypertarget{class_a_spawn_point_ad51ebdad7fa561b80337bc64d20a4251}\index{ASpawnPoint@{ASpawnPoint}!FastEnemyClass@{FastEnemyClass}}
+\index{FastEnemyClass@{FastEnemyClass}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{FastEnemyClass}{FastEnemyClass}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_ad51ebdad7fa561b80337bc64d20a4251} 
+TSubclass\+Of$<$\mbox{\hyperlink{class_a_enemy}{AEnemy}}$>$ ASpawn\+Point\+::\+Fast\+Enemy\+Class\hspace{0.3cm}{\ttfamily [protected]}}
+
+Fast enemy class. \Hypertarget{class_a_spawn_point_aea917a45622a3f1a291a07fe3cb9b5c8}\index{ASpawnPoint@{ASpawnPoint}!SpawnInterval@{SpawnInterval}}
+\index{SpawnInterval@{SpawnInterval}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{SpawnInterval}{SpawnInterval}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_aea917a45622a3f1a291a07fe3cb9b5c8} 
+float ASpawn\+Point\+::\+Spawn\+Interval = 1.f\hspace{0.3cm}{\ttfamily [protected]}}
+
+Delay between enemy spawns during a wave. \Hypertarget{class_a_spawn_point_a113c4c01047202051f7d4343d38097f5}\index{ASpawnPoint@{ASpawnPoint}!SpawnOffsetDistance@{SpawnOffsetDistance}}
+\index{SpawnOffsetDistance@{SpawnOffsetDistance}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{SpawnOffsetDistance}{SpawnOffsetDistance}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_a113c4c01047202051f7d4343d38097f5} 
+float ASpawn\+Point\+::\+Spawn\+Offset\+Distance = 100.f\hspace{0.3cm}{\ttfamily [protected]}}
+
+Distance offset used for enemy spawn positioning. \Hypertarget{class_a_spawn_point_a70eb70ee97484844bd2b8d3f9f0f5809}\index{ASpawnPoint@{ASpawnPoint}!SpawnRoot@{SpawnRoot}}
+\index{SpawnRoot@{SpawnRoot}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{SpawnRoot}{SpawnRoot}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_a70eb70ee97484844bd2b8d3f9f0f5809} 
+UScene\+Component\texorpdfstring{$\ast$}{*} ASpawn\+Point\+::\+Spawn\+Root = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+Scene component used as the root for spawn positioning. \Hypertarget{class_a_spawn_point_a7a826658a17df69a5f6db7f0935f721d}\index{ASpawnPoint@{ASpawnPoint}!StrengthIncreasePerSpawn@{StrengthIncreasePerSpawn}}
+\index{StrengthIncreasePerSpawn@{StrengthIncreasePerSpawn}!ASpawnPoint@{ASpawnPoint}}
+\doxysubsubsection{\texorpdfstring{StrengthIncreasePerSpawn}{StrengthIncreasePerSpawn}}
+{\footnotesize\ttfamily \label{class_a_spawn_point_a7a826658a17df69a5f6db7f0935f721d} 
+float ASpawn\+Point\+::\+Strength\+Increase\+Per\+Spawn = 0.\+05f}
+
+
+
+Strength multiplier added for each newly spawned enemy. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_spawn_point_8h}{Spawn\+Point.\+h}}\end{DoxyCompactItemize}

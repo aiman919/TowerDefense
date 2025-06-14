@@ -1,0 +1,109 @@
+\doxysection{Spawn\+Point.\+h}
+\hypertarget{_spawn_point_8h_source}{}\label{_spawn_point_8h_source}\mbox{\hyperlink{_spawn_point_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GameFramework/Actor.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}SpawnPoint.generated.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_a_enemy}{AEnemy}};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00018\ UCLASS()}
+\DoxyCodeLine{00019\ class\ MYPROJECT\_API\ \mbox{\hyperlink{class_a_spawn_point_a6151d03b817bc099006e4459ace197bb}{ASpawnPoint}}\ :\ public\ AActor}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_a_spawn_point_a6151d03b817bc099006e4459ace197bb}{ASpawnPoint}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00033\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Spawn"{}})}
+\DoxyCodeLine{00034\ \ \ \ \ void\ \mbox{\hyperlink{class_a_spawn_point_ab0c2da6c3d5a029ca1e2f21dc559daea}{StartWave}}(int32\ Size,\ \textcolor{keywordtype}{bool}\ bSpawnBossAtEnd\ =\ false);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Spawn"{}})}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_spawn_point_a7cefb8450869b2fcffe44d02eebe865c}{StopWave}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Design-\/time\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Spawn"{}})}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_a_spawn_point_ab573d5d3cd950259193979d0cccccb38}{bAutoStartWave}}\ =\ false;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Spawn"{}},\ meta\ =\ (EditCondition\ =\ \textcolor{stringliteral}{"{}bAutoStartWave"{}}))}
+\DoxyCodeLine{00054\ \ \ \ \ int32\ \mbox{\hyperlink{class_a_spawn_point_a67f8296baa80d193e36e2532a061ab09}{DefaultWaveSize}}\ =\ 5;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \ \ \ \ UPROPERTY(EditAnywhere,\ BlueprintReadWrite,\ Category\ =\ \textcolor{stringliteral}{"{}Spawn|Scaling"{}},\ meta\ =\ (ClampMin\ =\ \textcolor{stringliteral}{"{}0"{}}))}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_spawn_point_a7a826658a17df69a5f6db7f0935f721d}{StrengthIncreasePerSpawn}}\ =\ 0.05f;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Blueprint\ helpers\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \ \ UFUNCTION(BlueprintPure,\ Category\ =\ \textcolor{stringliteral}{"{}Spawn|Scaling"{}})}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_spawn_point_af4e0a27018ce52b0a8a04a3d7835216e}{GetNextEnemyStrengthMultiplier}}()\ const;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00077\ \ \ \ \ UFUNCTION(BlueprintImplementableEvent,\ Category\ =\ \textcolor{stringliteral}{"{}Spawn"{}})}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_spawn_point_a9331aefeea87d84944aecfe78f41e0d8}{OnEnemySpawnedBP}}(\mbox{\hyperlink{class_a_enemy}{AEnemy}}*\ Enemy,\ \textcolor{keywordtype}{float}\ AppliedMultiplier);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ protected:}
+\DoxyCodeLine{00082\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_spawn_point_a029015a9b369894d2f16413e7ced58f5}{BeginPlay}}()\ override;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Enemy\ pools\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00087\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Spawn|Types"{}})}
+\DoxyCodeLine{00088\ \ \ \ \ TArray<TSubclassOf<\mbox{\hyperlink{class_a_enemy}{AEnemy}}>>\ \mbox{\hyperlink{class_a_spawn_point_a67940639df467f15215951f57b73e095}{CommonEnemyTypes}};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Spawn|Types"{}},\ AdvancedDisplay)}
+\DoxyCodeLine{00092\ \ \ \ \ TArray<int32>\ \mbox{\hyperlink{class_a_spawn_point_a050588d331990218a95b7f8097354d4f}{CommonWeights}};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00095\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Spawn|Types"{}})}
+\DoxyCodeLine{00096\ \ \ \ \ TSubclassOf<\mbox{\hyperlink{class_a_enemy}{AEnemy}}>\ \mbox{\hyperlink{class_a_spawn_point_a196bdfaf6bd10b9a8e2737ab3e981471}{ArmoredEnemyClass}};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00099\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Spawn|Types"{}})}
+\DoxyCodeLine{00100\ \ \ \ \ TSubclassOf<\mbox{\hyperlink{class_a_enemy}{AEnemy}}>\ \mbox{\hyperlink{class_a_spawn_point_ad51ebdad7fa561b80337bc64d20a4251}{FastEnemyClass}};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00103\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Spawn|Types"{}})}
+\DoxyCodeLine{00104\ \ \ \ \ TSubclassOf<\mbox{\hyperlink{class_a_enemy}{AEnemy}}>\ \mbox{\hyperlink{class_a_spawn_point_a633290be58d28aa56a4aa019863d4627}{BossEnemyClass}};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Probabilities\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00109\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Spawn|Probabilities"{}},\ meta\ =\ (ClampMin\ =\ \textcolor{stringliteral}{"{}0"{}},\ ClampMax\ =\ \textcolor{stringliteral}{"{}1"{}}))}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_spawn_point_a481911a9f5f45c277febcdf1cbf3e064}{ArmoredChance}}\ =\ 0.15f;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00113\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Spawn|Probabilities"{}},\ meta\ =\ (ClampMin\ =\ \textcolor{stringliteral}{"{}0"{}},\ ClampMax\ =\ \textcolor{stringliteral}{"{}1"{}}))}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_spawn_point_ac9be27e8b90b936e560c517715aff286}{FastChance}}\ =\ 0.15f;}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Timing\ /\ Location\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00119\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Spawn|Timing"{}},\ meta\ =\ (ClampMin\ =\ \textcolor{stringliteral}{"{}0.05"{}}))}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_spawn_point_aea917a45622a3f1a291a07fe3cb9b5c8}{SpawnInterval}}\ =\ 1.f;}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00123\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Spawn|Location"{}})}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_spawn_point_a113c4c01047202051f7d4343d38097f5}{SpawnOffsetDistance}}\ =\ 100.f;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00127\ \ \ \ \ UPROPERTY(VisibleAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Spawn"{}})}
+\DoxyCodeLine{00128\ \ \ \ \ USceneComponent*\ \mbox{\hyperlink{class_a_spawn_point_a70eb70ee97484844bd2b8d3f9f0f5809}{SpawnRoot}}\ =\ \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ private:}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Runtime\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00134\ \ \ \ \ FTimerHandle\ SpawnTimerHandle;}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00137\ \ \ \ \ int32\ CurrentWave\ =\ 1;}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00140\ \ \ \ \ int32\ WaveSize\ =\ 0;}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00143\ \ \ \ \ int32\ SpawnedCnt\ =\ 0;}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{bool}\ bBossWave\ =\ false;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Helpers\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{void}\ SpawnOneEnemy();}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00157\ \ \ \ \ TSubclassOf<\mbox{\hyperlink{class_a_enemy}{AEnemy}}>\ ChooseEnemyClass()\ const;}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ StartNextWave();}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00167\ \ \ \ \ UFUNCTION()}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ OnBossDefeated(AActor*\ DestroyedActor);}
+\DoxyCodeLine{00169\ \};}
+
+\end{DoxyCode}

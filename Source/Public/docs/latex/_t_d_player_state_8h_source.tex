@@ -1,0 +1,52 @@
+\doxysection{TDPlayer\+State.\+h}
+\hypertarget{_t_d_player_state_8h_source}{}\label{_t_d_player_state_8h_source}\mbox{\hyperlink{_t_d_player_state_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GameFramework/PlayerState.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}TDPlayerState.generated.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ \mbox{\hyperlink{_t_d_player_state_8h_a1f117cadebc4091f2ea87afd8ed9396b}{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_OneParam}}(FOnMoneyChanged,\ int32,\ NewMoney);}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00017\ UCLASS()}
+\DoxyCodeLine{00018\ class\ MYPROJECT\_API\ \mbox{\hyperlink{class_a_t_d_player_state_aef258837fac786b2a7111a42d860fd6d}{ATDPlayerState}}\ :\ public\ APlayerState}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_a_t_d_player_state_aef258837fac786b2a7111a42d860fd6d}{ATDPlayerState}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \ \ \ \ UFUNCTION(BlueprintPure,\ Category\ =\ \textcolor{stringliteral}{"{}Resources"{}})}
+\DoxyCodeLine{00031\ \ \ \ \ FORCEINLINE\ int32\ \mbox{\hyperlink{class_a_t_d_player_state_a7066d9c84ab08cecde166754894a813c}{GetMoney}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ Money;\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Resources"{}})}
+\DoxyCodeLine{00039\ \ \ \ \ void\ \mbox{\hyperlink{class_a_t_d_player_state_a53dfeedc66cfed45bc0e0c6f2411839a}{AddMoney}}(int32\ Amount);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Resources"{}})}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_a_t_d_player_state_a20d0f61a571044484f828e586ba5b49e}{SpendMoney}}(int32\ Amount);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \ \ \ \ UPROPERTY(BlueprintAssignable,\ Category\ =\ \textcolor{stringliteral}{"{}Resources"{}})}
+\DoxyCodeLine{00052\ \ \ \ \ FOnMoneyChanged\ \mbox{\hyperlink{class_a_t_d_player_state_af0f3d709a4164282d12061a8ec3f4436}{OnMoneyChanged}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ protected:}
+\DoxyCodeLine{00060\ \ \ \ \ UFUNCTION()}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_t_d_player_state_a906e5898e5a35cdc04eb7139f75b2030}{OnRep\_Money}}(int32\ OldMoney);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00068\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_t_d_player_state_a419b7629d318e652b9d604d8e1512b95}{GetLifetimeReplicatedProps}}(}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ TArray<FLifetimeProperty>\&\ OutLifetimeProps}
+\DoxyCodeLine{00070\ \ \ \ \ )\ const\ override;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ private:}
+\DoxyCodeLine{00076\ \ \ \ \ UPROPERTY(ReplicatedUsing\ =\ \mbox{\hyperlink{class_a_t_d_player_state_a906e5898e5a35cdc04eb7139f75b2030}{OnRep\_Money}},\ SaveGame)}
+\DoxyCodeLine{00077\ \ \ \ \ int32\ Money\ =\ 0;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ BroadcastMoneyChanged();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{preprocessor}{\#if\ WITH\_AUTOMATION\_TESTS}}
+\DoxyCodeLine{00086\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ ForceSetMoney(int32\ Amount)\ \{\ Money\ =\ Amount;\ \}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00094\ \};}
+
+\end{DoxyCode}

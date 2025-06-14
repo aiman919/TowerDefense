@@ -1,0 +1,128 @@
+\doxysection{Enemy.\+h}
+\hypertarget{_enemy_8h_source}{}\label{_enemy_8h_source}\mbox{\hyperlink{_enemy_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Enemy.h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}GameFramework/Character.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Enemy.generated.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_a_base}{ABase}};}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_a_t_d_player_state}{ATDPlayerState}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00021\ UCLASS()}
+\DoxyCodeLine{00022\ class\ MYPROJECT\_API\ \mbox{\hyperlink{class_a_enemy_a78162cd7740ff2a86ba73ced9a4ae9be}{AEnemy}}\ :\ public\ ACharacter}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_a_enemy_aedf84a90a2b69cd2568754b48f22a58f}{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_OneParam}}(FOnEnemyHealthChanged,\ int32,\ NewHealth);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_a_enemy_aaaf95ea6f1f47b3c3defcaf90390e00c}{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE}}(FOnEnemyDeath);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \ \ \ \ UPROPERTY(BlueprintAssignable,\ Category\ =\ \textcolor{stringliteral}{"{}Enemy|Events"{}})}
+\DoxyCodeLine{00035\ \ \ \ \ FOnEnemyHealthChanged\ \mbox{\hyperlink{class_a_enemy_ab79212dc6ec8d2308c741afc53f2fc1c}{OnHealthChanged}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ UPROPERTY(BlueprintAssignable,\ Category\ =\ \textcolor{stringliteral}{"{}Enemy|Events"{}})}
+\DoxyCodeLine{00039\ \ \ \ \ FOnEnemyDeath\ \mbox{\hyperlink{class_a_enemy_a7ea9d4a636b74d30bec64cae28171a7b}{OnDeathEvt}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_a_enemy_a78162cd7740ff2a86ba73ced9a4ae9be}{AEnemy}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Combat\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00052\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_enemy_a0c4828f87d0151ea1b8fc34e8b6372b6}{ReceiveDamage}}(int32\ Amount,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ AController*\ DamageInstigator\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Enemy|Combat"{}})}
+\DoxyCodeLine{00061\ \ \ \ \ FORCEINLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_enemy_afa2dc57e7a91e6701ca31bbef96a5456}{ReceiveDamageBP}}(int32\ Amount)}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_a_enemy_a0c4828f87d0151ea1b8fc34e8b6372b6}{ReceiveDamage}}(Amount,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_enemy_a5748ab7e718a650609bfa43e4c0a43ae}{StartAttacking}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Enemy|Combat"{}})}
+\DoxyCodeLine{00076\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_enemy_a52a42a1a22c9343027e5ab510abf5eb9}{Attack}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00084\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_enemy_a76a288eb050ab88e61cdff6ab03f7f1c}{ApplyDifficultyScaling}}(int32\ WaveIndex,\ \textcolor{keywordtype}{float}\ StrengthMultiplier\ =\ 1.f);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Getters\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00092\ \ \ \ \ FORCEINLINE\ int32\ \mbox{\hyperlink{class_a_enemy_ae860d23a5375609c63337810f9a33b17}{GetHealth}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_a_enemy_a9cf4934085ad018e693c984c531a4be5}{CurrentHealth}};\ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00098\ \ \ \ \ FORCEINLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_a_enemy_abf4a3f96376d5dbcf2dba6276af576e1}{IsDead}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_a_enemy_a9cf4934085ad018e693c984c531a4be5}{CurrentHealth}}\ <=\ 0;\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00104\ \ \ \ \ FORCEINLINE\ AController*\ \mbox{\hyperlink{class_a_enemy_a0c217545806e56e2f7f96f111049ddf5}{GetLastInstigator}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_a_enemy_a911942ae9042b04919154b620f2fe27d}{LastDamageInstigator}};\ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_enemy_a83afbc9a495ee7612a67c8c65312332c}{BeginPlay}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_enemy_afedecbf71ef8f774326e0e1de6f7dfb3}{EndPlay}}(\textcolor{keyword}{const}\ EEndPlayReason::Type\ EndPlayReason)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_enemy_a92fceecab0a07b10fb436677d1c5fbda}{GetLifetimeReplicatedProps}}(}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ TArray<FLifetimeProperty>\&\ OutLifetimeProps}
+\DoxyCodeLine{00119\ \ \ \ \ )\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Movement\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00124\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Enemy|Movement"{}})}
+\DoxyCodeLine{00125\ \ \ \ \ AActor*\ \mbox{\hyperlink{class_a_enemy_a823666051777badb329d3fbcd1371329}{TargetActor}}\ =\ \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00128\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Enemy|Movement"{}},\ meta\ =\ (ClampMin\ =\ \textcolor{stringliteral}{"{}0"{}}))}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_enemy_a483014742c9f8b5a63a1d167573e32b1}{AcceptanceRadius}}\ =\ 30.f;}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00132\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Enemy|Movement"{}},\ meta\ =\ (ClampMin\ =\ \textcolor{stringliteral}{"{}0"{}}))}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_enemy_a016b75b460707f453651c8308ef5d45a}{MoveSpeed}}\ =\ 400.f;}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Base\ Stats\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00138\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ Replicated,\ Category\ =\ \textcolor{stringliteral}{"{}Enemy|Stats"{}},\ meta\ =\ (ClampMin\ =\ \textcolor{stringliteral}{"{}1"{}}))}
+\DoxyCodeLine{00139\ \ \ \ \ int32\ \mbox{\hyperlink{class_a_enemy_a5df1a51abbcec8cba9a5d8907809cbd4}{MaxHealth}}\ =\ 1000;}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00142\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Enemy|Stats"{}},\ meta\ =\ (ClampMin\ =\ \textcolor{stringliteral}{"{}0"{}}))}
+\DoxyCodeLine{00143\ \ \ \ \ int32\ \mbox{\hyperlink{class_a_enemy_a47c82f00f66dd58b7ca61c00312c79f6}{Armor}}\ =\ 0;}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00146\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ Replicated,\ Category\ =\ \textcolor{stringliteral}{"{}Enemy|Stats"{}},\ meta\ =\ (ClampMin\ =\ \textcolor{stringliteral}{"{}0"{}}))}
+\DoxyCodeLine{00147\ \ \ \ \ int32\ \mbox{\hyperlink{class_a_enemy_a2914aa97c4a440bd1996dc1b5144b88c}{AttackDamage}}\ =\ 50;}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00150\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Enemy|Stats"{}},\ meta\ =\ (ClampMin\ =\ \textcolor{stringliteral}{"{}0"{}},\ UIMin\ =\ \textcolor{stringliteral}{"{}0"{}}))}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_enemy_acffe379d6570b11e702beeec02488537}{AttackRate}}\ =\ 1.f;}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00154\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Enemy|Stats"{}})}
+\DoxyCodeLine{00155\ \ \ \ \ int32\ \mbox{\hyperlink{class_a_enemy_ac0a6a640e1de93e48464ae152bb35433}{MoneyReward}}\ =\ 10;}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Scaling\ Parameters\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00160\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Enemy|Scaling"{}},\ meta\ =\ (ClampMin\ =\ \textcolor{stringliteral}{"{}0"{}}))}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_enemy_a500b8ec9443efab902b845644cc8834a}{HealthPctPerWave}}\ =\ 0.20f;}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00164\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Enemy|Scaling"{}},\ meta\ =\ (ClampMin\ =\ \textcolor{stringliteral}{"{}0"{}}))}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_enemy_adbc23d7c2880514474b90ff4472bc46a}{DamagePctPerWave}}\ =\ 0.15f;}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00168\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Enemy|Scaling"{}})}
+\DoxyCodeLine{00169\ \ \ \ \ int32\ \mbox{\hyperlink{class_a_enemy_abf6309339d906ad8264e7d83589b8965}{MaxHealthCap}}\ =\ 10000;}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00172\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category\ =\ \textcolor{stringliteral}{"{}Enemy|Scaling"{}})}
+\DoxyCodeLine{00173\ \ \ \ \ int32\ \mbox{\hyperlink{class_a_enemy_a84a37ec55e93fe53d47c9b336fd878fb}{DamageCap}}\ =\ 2000;}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ protected:}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Runtime\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00179\ \ \ \ \ UPROPERTY(ReplicatedUsing\ =\ \mbox{\hyperlink{class_a_enemy_a540cef329e7430d30a1900c5641bba76}{OnRep\_Health}})}
+\DoxyCodeLine{00180\ \ \ \ \ int32\ \mbox{\hyperlink{class_a_enemy_a9cf4934085ad018e693c984c531a4be5}{CurrentHealth}}\ =\ 0;}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00183\ \ \ \ \ UPROPERTY()}
+\DoxyCodeLine{00184\ \ \ \ \ AController*\ \mbox{\hyperlink{class_a_enemy_a911942ae9042b04919154b620f2fe27d}{LastDamageInstigator}}\ =\ \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00187\ \ \ \ \ FTimerHandle\ \mbox{\hyperlink{class_a_enemy_ae4139a799749eceedd51d5a68a210779}{AttackTimerHandle}};}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Network\ Callbacks\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00192\ \ \ \ \ UFUNCTION()}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_enemy_a540cef329e7430d30a1900c5641bba76}{OnRep\_Health}}();}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_enemy_a02b3f90fec06beec4d2d426549f43cf6}{HandleDeath}}();}
+\DoxyCodeLine{00197\ \};}
+
+\end{DoxyCode}

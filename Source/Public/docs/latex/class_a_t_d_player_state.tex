@@ -1,0 +1,151 @@
+\doxysection{ATDPlayer\+State Class Reference}
+\hypertarget{class_a_t_d_player_state}{}\label{class_a_t_d_player_state}\index{ATDPlayerState@{ATDPlayerState}}
+
+
+Holds and replicates the player\textquotesingle{}s resources (money) to clients.  
+
+
+
+
+{\ttfamily \#include $<$TDPlayer\+State.\+h$>$}
+
+Inheritance diagram for ATDPlayer\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_t_d_player_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a_t_d_player_state_aef258837fac786b2a7111a42d860fd6d}{ATDPlayer\+State}} ()=default
+\item 
+FORCEINLINE int32 \mbox{\hyperlink{class_a_t_d_player_state_a7066d9c84ab08cecde166754894a813c}{Get\+Money}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current amount of money. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_t_d_player_state_a53dfeedc66cfed45bc0e0c6f2411839a}{Add\+Money}} (int32 Amount)
+\begin{DoxyCompactList}\small\item\em Adds money to the player (only positive amounts). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_a_t_d_player_state_a20d0f61a571044484f828e586ba5b49e}{Spend\+Money}} (int32 Amount)
+\begin{DoxyCompactList}\small\item\em Tries to spend a specific amount of money. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+FOn\+Money\+Changed \mbox{\hyperlink{class_a_t_d_player_state_af0f3d709a4164282d12061a8ec3f4436}{On\+Money\+Changed}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_a_t_d_player_state_a906e5898e5a35cdc04eb7139f75b2030}{On\+Rep\+\_\+\+Money}} (int32 Old\+Money)
+\begin{DoxyCompactList}\small\item\em Replication callback for the Money variable. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_t_d_player_state_a419b7629d318e652b9d604d8e1512b95}{Get\+Lifetime\+Replicated\+Props}} (TArray$<$ FLifetime\+Property $>$ \&Out\+Lifetime\+Props) const override
+\begin{DoxyCompactList}\small\item\em Sets up property replication for networking. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Holds and replicates the player\textquotesingle{}s resources (money) to clients. 
+
+\label{doc-constructors}
+\Hypertarget{class_a_t_d_player_state_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_a_t_d_player_state_aef258837fac786b2a7111a42d860fd6d}\index{ATDPlayerState@{ATDPlayerState}!ATDPlayerState@{ATDPlayerState}}
+\index{ATDPlayerState@{ATDPlayerState}!ATDPlayerState@{ATDPlayerState}}
+\doxysubsubsection{\texorpdfstring{ATDPlayerState()}{ATDPlayerState()}}
+{\footnotesize\ttfamily \label{class_a_t_d_player_state_aef258837fac786b2a7111a42d860fd6d} 
+ATDPlayer\+State\+::\+ATDPlayer\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Default constructor. 
+
+\label{doc-func-members}
+\Hypertarget{class_a_t_d_player_state_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_a_t_d_player_state_a53dfeedc66cfed45bc0e0c6f2411839a}\index{ATDPlayerState@{ATDPlayerState}!AddMoney@{AddMoney}}
+\index{AddMoney@{AddMoney}!ATDPlayerState@{ATDPlayerState}}
+\doxysubsubsection{\texorpdfstring{AddMoney()}{AddMoney()}}
+{\footnotesize\ttfamily \label{class_a_t_d_player_state_a53dfeedc66cfed45bc0e0c6f2411839a} 
+void ATDPlayer\+State\+::\+Add\+Money (\begin{DoxyParamCaption}\item[{int32}]{Amount}{}\end{DoxyParamCaption})}
+
+
+
+Adds money to the player (only positive amounts). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Amount} & The amount to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_a_t_d_player_state_a419b7629d318e652b9d604d8e1512b95}\index{ATDPlayerState@{ATDPlayerState}!GetLifetimeReplicatedProps@{GetLifetimeReplicatedProps}}
+\index{GetLifetimeReplicatedProps@{GetLifetimeReplicatedProps}!ATDPlayerState@{ATDPlayerState}}
+\doxysubsubsection{\texorpdfstring{GetLifetimeReplicatedProps()}{GetLifetimeReplicatedProps()}}
+{\footnotesize\ttfamily \label{class_a_t_d_player_state_a419b7629d318e652b9d604d8e1512b95} 
+virtual void ATDPlayer\+State\+::\+Get\+Lifetime\+Replicated\+Props (\begin{DoxyParamCaption}\item[{TArray$<$ FLifetime\+Property $>$ \&}]{Out\+Lifetime\+Props}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Sets up property replication for networking. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Out\+Lifetime\+Props} & The list of properties to replicate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_a_t_d_player_state_a7066d9c84ab08cecde166754894a813c}\index{ATDPlayerState@{ATDPlayerState}!GetMoney@{GetMoney}}
+\index{GetMoney@{GetMoney}!ATDPlayerState@{ATDPlayerState}}
+\doxysubsubsection{\texorpdfstring{GetMoney()}{GetMoney()}}
+{\footnotesize\ttfamily \label{class_a_t_d_player_state_a7066d9c84ab08cecde166754894a813c} 
+FORCEINLINE int32 ATDPlayer\+State\+::\+Get\+Money (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current amount of money. 
+
+\begin{DoxyReturn}{Returns}
+Player\textquotesingle{}s money. 
+\end{DoxyReturn}
+\Hypertarget{class_a_t_d_player_state_a906e5898e5a35cdc04eb7139f75b2030}\index{ATDPlayerState@{ATDPlayerState}!OnRep\_Money@{OnRep\_Money}}
+\index{OnRep\_Money@{OnRep\_Money}!ATDPlayerState@{ATDPlayerState}}
+\doxysubsubsection{\texorpdfstring{OnRep\_Money()}{OnRep\_Money()}}
+{\footnotesize\ttfamily \label{class_a_t_d_player_state_a906e5898e5a35cdc04eb7139f75b2030} 
+void ATDPlayer\+State\+::\+On\+Rep\+\_\+\+Money (\begin{DoxyParamCaption}\item[{int32}]{Old\+Money}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Replication callback for the Money variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Old\+Money} & The previous value before update. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_a_t_d_player_state_a20d0f61a571044484f828e586ba5b49e}\index{ATDPlayerState@{ATDPlayerState}!SpendMoney@{SpendMoney}}
+\index{SpendMoney@{SpendMoney}!ATDPlayerState@{ATDPlayerState}}
+\doxysubsubsection{\texorpdfstring{SpendMoney()}{SpendMoney()}}
+{\footnotesize\ttfamily \label{class_a_t_d_player_state_a20d0f61a571044484f828e586ba5b49e} 
+bool ATDPlayer\+State\+::\+Spend\+Money (\begin{DoxyParamCaption}\item[{int32}]{Amount}{}\end{DoxyParamCaption})}
+
+
+
+Tries to spend a specific amount of money. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Amount} & The amount to spend. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the transaction was successful; false otherwise. 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_a_t_d_player_state_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_a_t_d_player_state_af0f3d709a4164282d12061a8ec3f4436}\index{ATDPlayerState@{ATDPlayerState}!OnMoneyChanged@{OnMoneyChanged}}
+\index{OnMoneyChanged@{OnMoneyChanged}!ATDPlayerState@{ATDPlayerState}}
+\doxysubsubsection{\texorpdfstring{OnMoneyChanged}{OnMoneyChanged}}
+{\footnotesize\ttfamily \label{class_a_t_d_player_state_af0f3d709a4164282d12061a8ec3f4436} 
+FOn\+Money\+Changed ATDPlayer\+State\+::\+On\+Money\+Changed}
+
+Event broadcasted when money value changes (for UI). 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_t_d_player_state_8h}{TDPlayer\+State.\+h}}\end{DoxyCompactItemize}

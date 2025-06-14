@@ -1,0 +1,189 @@
+\doxysection{ABase Class Reference}
+\hypertarget{class_a_base}{}\label{class_a_base}\index{ABase@{ABase}}
+
+
+Base class with replicated health logic.  
+
+
+
+
+{\ttfamily \#include $<$Base.\+h$>$}
+
+Inheritance diagram for ABase\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_base}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a_base_a62e3e541847091ba88f3697fef12ad19}{ABase}} ()
+\item 
+virtual float \mbox{\hyperlink{class_a_base_a314fdd70f4058fdf577ffd3b55929e0e}{Take\+Damage}} (float Damage\+Amount, const FDamage\+Event \&Damage\+Event, AController \texorpdfstring{$\ast$}{*}Event\+Instigator, AActor \texorpdfstring{$\ast$}{*}Damage\+Causer) override
+\begin{DoxyCompactList}\small\item\em Applies float damage using Unreal\textquotesingle{}s damage system. \end{DoxyCompactList}\item 
+FORCEINLINE void \mbox{\hyperlink{class_a_base_aca6eaee16cf17dbc10c1de2717e9d7ab}{Receive\+Damage}} (int32 Amount)
+\begin{DoxyCompactList}\small\item\em Applies integer damage (useful for Blueprints). \end{DoxyCompactList}\item 
+FORCEINLINE int32 \mbox{\hyperlink{class_a_base_a711a20e4a94855058eef26ceb974e885}{Get\+Health}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current health of the base. \end{DoxyCompactList}\item 
+FORCEINLINE bool \mbox{\hyperlink{class_a_base_a967038edf085ec1cd67aa8e264497ae8}{Is\+Destroyed}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the base is considered destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a_base_a78b946d68cb7d9ea4960fa433e8289ff}{UPROPERTY}} (Replicated\+Using=\mbox{\hyperlink{class_a_base_ad9d2d73743ec951fbeaed216713d19ee}{On\+Rep\+\_\+\+Health}}, Visible\+Anywhere, Category="{}Defense"{}, Save\+Game) int32 Health
+\begin{DoxyCompactList}\small\item\em The current health value (replicated and saved). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_base_ad9d2d73743ec951fbeaed216713d19ee}{On\+Rep\+\_\+\+Health}} ()
+\begin{DoxyCompactList}\small\item\em Callback triggered when Health is updated on clients. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_base_a4caf2214a892a4793a6c7c1e4c4d30c9}{Get\+Lifetime\+Replicated\+Props}} (TArray$<$ FLifetime\+Property $>$ \&Out\+Lifetime\+Props) const override
+\begin{DoxyCompactList}\small\item\em Specifies which properties are replicated over the network. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int32 \mbox{\hyperlink{class_a_base_a12de39527a08d4e977f8d3e374cfe646}{Max\+Health}} = 100
+\begin{DoxyCompactList}\small\item\em The maximum health value (can be set in Inspector). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class with replicated health logic. 
+
+This actor represents a destructible base with replicated health.
+\begin{DoxyItemize}
+\item Health and Max\+Health are initialized in the constructor.
+\item Internal damage logic is separated for reusability between different damage types. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_a_base_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_a_base_a62e3e541847091ba88f3697fef12ad19}\index{ABase@{ABase}!ABase@{ABase}}
+\index{ABase@{ABase}!ABase@{ABase}}
+\doxysubsubsection{\texorpdfstring{ABase()}{ABase()}}
+{\footnotesize\ttfamily \label{class_a_base_a62e3e541847091ba88f3697fef12ad19} 
+ABase\+::\+ABase (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Constructor that initializes default health values. 
+
+\label{doc-func-members}
+\Hypertarget{class_a_base_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_a_base_a711a20e4a94855058eef26ceb974e885}\index{ABase@{ABase}!GetHealth@{GetHealth}}
+\index{GetHealth@{GetHealth}!ABase@{ABase}}
+\doxysubsubsection{\texorpdfstring{GetHealth()}{GetHealth()}}
+{\footnotesize\ttfamily \label{class_a_base_a711a20e4a94855058eef26ceb974e885} 
+FORCEINLINE int32 ABase\+::\+Get\+Health (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the current health of the base. 
+
+\begin{DoxyReturn}{Returns}
+The current health value. 
+\end{DoxyReturn}
+\Hypertarget{class_a_base_a4caf2214a892a4793a6c7c1e4c4d30c9}\index{ABase@{ABase}!GetLifetimeReplicatedProps@{GetLifetimeReplicatedProps}}
+\index{GetLifetimeReplicatedProps@{GetLifetimeReplicatedProps}!ABase@{ABase}}
+\doxysubsubsection{\texorpdfstring{GetLifetimeReplicatedProps()}{GetLifetimeReplicatedProps()}}
+{\footnotesize\ttfamily \label{class_a_base_a4caf2214a892a4793a6c7c1e4c4d30c9} 
+virtual void ABase\+::\+Get\+Lifetime\+Replicated\+Props (\begin{DoxyParamCaption}\item[{TArray$<$ FLifetime\+Property $>$ \&}]{Out\+Lifetime\+Props}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Specifies which properties are replicated over the network. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Out\+Lifetime\+Props} & The list to populate with replicated properties. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_a_base_a967038edf085ec1cd67aa8e264497ae8}\index{ABase@{ABase}!IsDestroyed@{IsDestroyed}}
+\index{IsDestroyed@{IsDestroyed}!ABase@{ABase}}
+\doxysubsubsection{\texorpdfstring{IsDestroyed()}{IsDestroyed()}}
+{\footnotesize\ttfamily \label{class_a_base_a967038edf085ec1cd67aa8e264497ae8} 
+FORCEINLINE bool ABase\+::\+Is\+Destroyed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the base is considered destroyed. 
+
+\begin{DoxyReturn}{Returns}
+True if Health is 0 or below, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_a_base_ad9d2d73743ec951fbeaed216713d19ee}\index{ABase@{ABase}!OnRep\_Health@{OnRep\_Health}}
+\index{OnRep\_Health@{OnRep\_Health}!ABase@{ABase}}
+\doxysubsubsection{\texorpdfstring{OnRep\_Health()}{OnRep\_Health()}}
+{\footnotesize\ttfamily \label{class_a_base_ad9d2d73743ec951fbeaed216713d19ee} 
+void ABase\+::\+On\+Rep\+\_\+\+Health (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Callback triggered when Health is updated on clients. 
+
+\Hypertarget{class_a_base_aca6eaee16cf17dbc10c1de2717e9d7ab}\index{ABase@{ABase}!ReceiveDamage@{ReceiveDamage}}
+\index{ReceiveDamage@{ReceiveDamage}!ABase@{ABase}}
+\doxysubsubsection{\texorpdfstring{ReceiveDamage()}{ReceiveDamage()}}
+{\footnotesize\ttfamily \label{class_a_base_aca6eaee16cf17dbc10c1de2717e9d7ab} 
+FORCEINLINE void ABase\+::\+Receive\+Damage (\begin{DoxyParamCaption}\item[{int32}]{Amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Applies integer damage (useful for Blueprints). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Amount} & The amount of integer damage to apply. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_a_base_a314fdd70f4058fdf577ffd3b55929e0e}\index{ABase@{ABase}!TakeDamage@{TakeDamage}}
+\index{TakeDamage@{TakeDamage}!ABase@{ABase}}
+\doxysubsubsection{\texorpdfstring{TakeDamage()}{TakeDamage()}}
+{\footnotesize\ttfamily \label{class_a_base_a314fdd70f4058fdf577ffd3b55929e0e} 
+virtual float ABase\+::\+Take\+Damage (\begin{DoxyParamCaption}\item[{float}]{Damage\+Amount}{, }\item[{const FDamage\+Event \&}]{Damage\+Event}{, }\item[{AController \texorpdfstring{$\ast$}{*}}]{Event\+Instigator}{, }\item[{AActor \texorpdfstring{$\ast$}{*}}]{Damage\+Causer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies float damage using Unreal\textquotesingle{}s damage system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Damage\+Amount} & Amount of damage to apply. \\
+\hline
+{\em Damage\+Event} & Details about the damage event. \\
+\hline
+{\em Event\+Instigator} & The controller that instigated the damage. \\
+\hline
+{\em Damage\+Causer} & The actor that caused the damage. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The actual amount of damage applied. 
+\end{DoxyReturn}
+\Hypertarget{class_a_base_a78b946d68cb7d9ea4960fa433e8289ff}\index{ABase@{ABase}!UPROPERTY@{UPROPERTY}}
+\index{UPROPERTY@{UPROPERTY}!ABase@{ABase}}
+\doxysubsubsection{\texorpdfstring{UPROPERTY()}{UPROPERTY()}}
+{\footnotesize\ttfamily \label{class_a_base_a78b946d68cb7d9ea4960fa433e8289ff} 
+ABase\+::\+UPROPERTY (\begin{DoxyParamCaption}\item[{Replicated\+Using}]{}{ = {\ttfamily \mbox{\hyperlink{class_a_base_ad9d2d73743ec951fbeaed216713d19ee}{On\+Rep\+\_\+\+Health}}}, }\item[{Visible\+Anywhere}]{}{, }\item[{Category}]{}{ = {\ttfamily "{}Defense"{}}, }\item[{Save\+Game}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The current health value (replicated and saved). 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_a_base_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_a_base_a12de39527a08d4e977f8d3e374cfe646}\index{ABase@{ABase}!MaxHealth@{MaxHealth}}
+\index{MaxHealth@{MaxHealth}!ABase@{ABase}}
+\doxysubsubsection{\texorpdfstring{MaxHealth}{MaxHealth}}
+{\footnotesize\ttfamily \label{class_a_base_a12de39527a08d4e977f8d3e374cfe646} 
+int32 ABase\+::\+Max\+Health = 100\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The maximum health value (can be set in Inspector). 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_base_8h}{Base.\+h}}\end{DoxyCompactItemize}

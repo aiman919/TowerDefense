@@ -1,0 +1,139 @@
+\doxysection{AMy\+Project\+Player\+Controller Class Reference}
+\hypertarget{class_a_my_project_player_controller}{}\label{class_a_my_project_player_controller}\index{AMyProjectPlayerController@{AMyProjectPlayerController}}
+
+
+Player controller for Top-\/\+Down view; allows spawning towers via mouse clicks.  
+
+
+
+
+{\ttfamily \#include $<$My\+Project\+Player\+Controller.\+h$>$}
+
+Inheritance diagram for AMy\+Project\+Player\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_my_project_player_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a_my_project_player_controller_a756ccee3c3fba7f7bc503aadfbdc6314}{AMy\+Project\+Player\+Controller}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TSubclass\+Of$<$ \mbox{\hyperlink{class_a_tower}{ATower}} $>$ \mbox{\hyperlink{class_a_my_project_player_controller_a13be81f33ccf6cc205bbbbe4ad36a1f0}{Tower\+To\+Spawn}}
+\begin{DoxyCompactList}\small\item\em The class of the tower to spawn when clicking. Can be edited via Blueprints. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_my_project_player_controller_a778ddd56f75473dfda54ad9ca74e21fe}{Short\+Press\+Threshold}} = 0.\+2f
+\begin{DoxyCompactList}\small\item\em Threshold time (in seconds) for detecting a short click. \end{DoxyCompactList}\item 
+UNiagara\+System \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_a_my_project_player_controller_a5352fcfdf6fddd188a88710fd5665990}{FXCursor}} = nullptr
+\begin{DoxyCompactList}\small\item\em Niagara FX system used to visualize cursor clicks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_a_my_project_player_controller_a9ee67e7bb0cf0e541f4b43489411ff6a}{Setup\+Input\+Component}} () override
+\begin{DoxyCompactList}\small\item\em Sets up input bindings. Called by the engine when initializing the input component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+UInput\+Mapping\+Context \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_a_my_project_player_controller_a84a9a38de1bc28666df0598aca0fde40}{Default\+Mapping\+Context}} = nullptr
+\begin{DoxyCompactList}\small\item\em Input mapping context used by this controller. \end{DoxyCompactList}\item 
+UInput\+Action \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_a_my_project_player_controller_a9dc453b7e9486c155052a4ea4445f311}{Spawn\+Tower\+Action}} = nullptr
+\begin{DoxyCompactList}\small\item\em Input action for spawning a tower. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Player controller for Top-\/\+Down view; allows spawning towers via mouse clicks. 
+
+Highlights\+:
+\begin{DoxyItemize}
+\item No overridden Begin\+Play; clean and focused logic.
+\item Public API remains clean due to encapsulated helper methods.
+\item Fully supports Blueprint editing of Tower\+To\+Spawn. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_a_my_project_player_controller_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_a_my_project_player_controller_a756ccee3c3fba7f7bc503aadfbdc6314}\index{AMyProjectPlayerController@{AMyProjectPlayerController}!AMyProjectPlayerController@{AMyProjectPlayerController}}
+\index{AMyProjectPlayerController@{AMyProjectPlayerController}!AMyProjectPlayerController@{AMyProjectPlayerController}}
+\doxysubsubsection{\texorpdfstring{AMyProjectPlayerController()}{AMyProjectPlayerController()}}
+{\footnotesize\ttfamily \label{class_a_my_project_player_controller_a756ccee3c3fba7f7bc503aadfbdc6314} 
+AMy\+Project\+Player\+Controller\+::\+AMy\+Project\+Player\+Controller (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Default constructor. Initializes controller state. 
+
+\label{doc-func-members}
+\Hypertarget{class_a_my_project_player_controller_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_a_my_project_player_controller_a9ee67e7bb0cf0e541f4b43489411ff6a}\index{AMyProjectPlayerController@{AMyProjectPlayerController}!SetupInputComponent@{SetupInputComponent}}
+\index{SetupInputComponent@{SetupInputComponent}!AMyProjectPlayerController@{AMyProjectPlayerController}}
+\doxysubsubsection{\texorpdfstring{SetupInputComponent()}{SetupInputComponent()}}
+{\footnotesize\ttfamily \label{class_a_my_project_player_controller_a9ee67e7bb0cf0e541f4b43489411ff6a} 
+virtual void AMy\+Project\+Player\+Controller\+::\+Setup\+Input\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Sets up input bindings. Called by the engine when initializing the input component. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_a_my_project_player_controller_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_a_my_project_player_controller_a84a9a38de1bc28666df0598aca0fde40}\index{AMyProjectPlayerController@{AMyProjectPlayerController}!DefaultMappingContext@{DefaultMappingContext}}
+\index{DefaultMappingContext@{DefaultMappingContext}!AMyProjectPlayerController@{AMyProjectPlayerController}}
+\doxysubsubsection{\texorpdfstring{DefaultMappingContext}{DefaultMappingContext}}
+{\footnotesize\ttfamily \label{class_a_my_project_player_controller_a84a9a38de1bc28666df0598aca0fde40} 
+UInput\+Mapping\+Context\texorpdfstring{$\ast$}{*} AMy\+Project\+Player\+Controller\+::\+Default\+Mapping\+Context = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Input mapping context used by this controller. 
+
+\Hypertarget{class_a_my_project_player_controller_a5352fcfdf6fddd188a88710fd5665990}\index{AMyProjectPlayerController@{AMyProjectPlayerController}!FXCursor@{FXCursor}}
+\index{FXCursor@{FXCursor}!AMyProjectPlayerController@{AMyProjectPlayerController}}
+\doxysubsubsection{\texorpdfstring{FXCursor}{FXCursor}}
+{\footnotesize\ttfamily \label{class_a_my_project_player_controller_a5352fcfdf6fddd188a88710fd5665990} 
+UNiagara\+System\texorpdfstring{$\ast$}{*} AMy\+Project\+Player\+Controller\+::\+FXCursor = nullptr}
+
+
+
+Niagara FX system used to visualize cursor clicks. 
+
+\Hypertarget{class_a_my_project_player_controller_a778ddd56f75473dfda54ad9ca74e21fe}\index{AMyProjectPlayerController@{AMyProjectPlayerController}!ShortPressThreshold@{ShortPressThreshold}}
+\index{ShortPressThreshold@{ShortPressThreshold}!AMyProjectPlayerController@{AMyProjectPlayerController}}
+\doxysubsubsection{\texorpdfstring{ShortPressThreshold}{ShortPressThreshold}}
+{\footnotesize\ttfamily \label{class_a_my_project_player_controller_a778ddd56f75473dfda54ad9ca74e21fe} 
+float AMy\+Project\+Player\+Controller\+::\+Short\+Press\+Threshold = 0.\+2f}
+
+
+
+Threshold time (in seconds) for detecting a short click. 
+
+\Hypertarget{class_a_my_project_player_controller_a9dc453b7e9486c155052a4ea4445f311}\index{AMyProjectPlayerController@{AMyProjectPlayerController}!SpawnTowerAction@{SpawnTowerAction}}
+\index{SpawnTowerAction@{SpawnTowerAction}!AMyProjectPlayerController@{AMyProjectPlayerController}}
+\doxysubsubsection{\texorpdfstring{SpawnTowerAction}{SpawnTowerAction}}
+{\footnotesize\ttfamily \label{class_a_my_project_player_controller_a9dc453b7e9486c155052a4ea4445f311} 
+UInput\+Action\texorpdfstring{$\ast$}{*} AMy\+Project\+Player\+Controller\+::\+Spawn\+Tower\+Action = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Input action for spawning a tower. 
+
+\Hypertarget{class_a_my_project_player_controller_a13be81f33ccf6cc205bbbbe4ad36a1f0}\index{AMyProjectPlayerController@{AMyProjectPlayerController}!TowerToSpawn@{TowerToSpawn}}
+\index{TowerToSpawn@{TowerToSpawn}!AMyProjectPlayerController@{AMyProjectPlayerController}}
+\doxysubsubsection{\texorpdfstring{TowerToSpawn}{TowerToSpawn}}
+{\footnotesize\ttfamily \label{class_a_my_project_player_controller_a13be81f33ccf6cc205bbbbe4ad36a1f0} 
+TSubclass\+Of$<$\mbox{\hyperlink{class_a_tower}{ATower}}$>$ AMy\+Project\+Player\+Controller\+::\+Tower\+To\+Spawn}
+
+
+
+The class of the tower to spawn when clicking. Can be edited via Blueprints. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_my_project_player_controller_8h}{My\+Project\+Player\+Controller.\+h}}\end{DoxyCompactItemize}

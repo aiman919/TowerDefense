@@ -4,9 +4,9 @@ AEnemyFast::AEnemyFast()
 {
     MaxHealth    = 600;
     Armor        = 0;
-    MoveSpeed    = 700.f;   // быстрее базового врага
+    MoveSpeed    = 700.f;   
     AttackDamage = 30;
-    AttackRate   = 1.5f;    // 1.5 атаки в секунду
+    AttackRate   = 1.5f;    
 
-    CurrentHealth = MaxHealth; // обновляем после изменения MaxHealth
+    CurrentHealth = MaxHealth;
 }

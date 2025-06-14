@@ -16,7 +16,7 @@ void AMyProjectGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// Логика нужна только на сервере и при наличии мира
+	
 	UWorld* World = GetWorld();
 	if (!World || !HasAuthority())
 		return;

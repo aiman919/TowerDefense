@@ -5,23 +5,23 @@
 
 AEnemyBoss::AEnemyBoss()
 {
-    // Усиленные параметры босса
+   
     MaxHealth    = 5000;
     Armor        = 100;
     AttackDamage = 100;
     AttackRate   = 0.5f;
     MoveSpeed    = 400.f;
 
-    CurrentHealth        = MaxHealth;          // поле из AEnemy
-    LastSpecialAttackTime = -SpecialAttackCooldown; // «готово сразу»
+    CurrentHealth        = MaxHealth;          
+    LastSpecialAttackTime = -SpecialAttackCooldown; 
 }
 
 void AEnemyBoss::Attack()
 {
-    Super::Attack();                           // стандартный удар
+    Super::Attack();                           
 
     UWorld* World = GetWorld();
-    if (!World || !HasAuthority())             // без мира / на клиенте — ничего не делаем
+    if (!World || !HasAuthority())             
         return;
 
     const float Now = World->GetTimeSeconds();
@@ -34,12 +34,12 @@ void AEnemyBoss::Attack()
 
 void AEnemyBoss::PerformSpecialAttack()
 {
-    // Защита от вызова на клиентах или без мира
+    
     UWorld* World = GetWorld();
     if (!HasAuthority() || !World)
         return;
 
-    // Массовый урон по радиусу 500 uu
+    
     TArray<AActor*> Ignored;
     Ignored.Add(this);
 
@@ -48,12 +48,12 @@ void AEnemyBoss::PerformSpecialAttack()
         SpecialAttackDamage,
         GetActorLocation(),
         500.f,
-        nullptr,                       // DamageType
+        nullptr,                       
         Ignored,
         this,
         GetInstigatorController(),
-        true                           // DoFullDamage
+        true                           
     );
 
-    // Здесь можно вызвать FX / SFX / Blueprint-ивент
+   
 }

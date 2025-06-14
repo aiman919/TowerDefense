@@ -1,0 +1,59 @@
+\doxysection{Base.\+h}
+\hypertarget{_base_8h_source}{}\label{_base_8h_source}\mbox{\hyperlink{_base_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Base.h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}GameFramework/Actor.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Base.generated.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00016\ UCLASS()}
+\DoxyCodeLine{00017\ class\ MYPROJECT\_API\ \mbox{\hyperlink{class_a_base_a62e3e541847091ba88f3697fef12ad19}{ABase}}\ :\ public\ AActor}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_a_base_a62e3e541847091ba88f3697fef12ad19}{ABase}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_base_a314fdd70f4058fdf577ffd3b55929e0e}{TakeDamage}}(\textcolor{keywordtype}{float}\ DamageAmount,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ FDamageEvent\&\ DamageEvent,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AController*\ EventInstigator,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AActor*\ DamageCauser)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00044\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Defense"{}})}
+\DoxyCodeLine{00045\ \ \ \ \ FORCEINLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_base_aca6eaee16cf17dbc10c1de2717e9d7ab}{ReceiveDamage}}(int32\ Amount)}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ ApplyDamageInternal(Amount);}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00055\ \ \ \ \ UFUNCTION(BlueprintPure,\ Category\ =\ \textcolor{stringliteral}{"{}Defense"{}})}
+\DoxyCodeLine{00056\ \ \ \ \ FORCEINLINE\ int32\ \mbox{\hyperlink{class_a_base_a711a20e4a94855058eef26ceb974e885}{GetHealth}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ Health;\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \ \ \ \ UFUNCTION(BlueprintPure,\ Category\ =\ \textcolor{stringliteral}{"{}Defense"{}})}
+\DoxyCodeLine{00064\ \ \ \ \ FORCEINLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_a_base_a967038edf085ec1cd67aa8e264497ae8}{IsDestroyed}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ Health\ <=\ 0;\ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_a_base_a78b946d68cb7d9ea4960fa433e8289ff}{UPROPERTY}}(ReplicatedUsing\ =\ \mbox{\hyperlink{class_a_base_ad9d2d73743ec951fbeaed216713d19ee}{OnRep\_Health}},}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ VisibleAnywhere,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Category\ =\ \textcolor{stringliteral}{"{}Defense"{}},}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SaveGame)}
+\DoxyCodeLine{00074\ \ \ \ \ int32\ Health\ =\ 100;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_a_base_a78b946d68cb7d9ea4960fa433e8289ff}{UPROPERTY}}(EditDefaultsOnly,\ BlueprintReadOnly,\ Category\ =\ \textcolor{stringliteral}{"{}Defense"{}})}
+\DoxyCodeLine{00080\ \ \ \ \ int32\ \mbox{\hyperlink{class_a_base_a12de39527a08d4e977f8d3e374cfe646}{MaxHealth}}\ =\ 100;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00085\ \ \ \ \ UFUNCTION()}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_base_ad9d2d73743ec951fbeaed216713d19ee}{OnRep\_Health}}();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00093\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_base_a4caf2214a892a4793a6c7c1e4c4d30c9}{GetLifetimeReplicatedProps}}(}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ TArray<FLifetimeProperty>\&\ OutLifetimeProps}
+\DoxyCodeLine{00095\ \ \ \ \ )\ const\ override;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ private:}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyDamageInternal(int32\ Damage);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ HandleDestroyed();}
+\DoxyCodeLine{00109\ \};}
+
+\end{DoxyCode}

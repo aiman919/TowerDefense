@@ -1,0 +1,209 @@
+\doxysection{ATower Class Reference}
+\hypertarget{class_a_tower}{}\label{class_a_tower}\index{ATower@{ATower}}
+
+
+Cannon tower that searches for the nearest enemy in range and fires periodically. Supports upgrades using player currency.  
+
+
+
+
+{\ttfamily \#include $<$Tower.\+h$>$}
+
+Inheritance diagram for ATower\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_tower}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a_tower_ae7c0e44340c8f10139a5efa1e204f2f7}{ATower}} ()
+\item 
+FORCEINLINE int32 \mbox{\hyperlink{class_a_tower_ade0f8324c2282e43b822bff120a22043}{Get\+Tower\+Level}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current upgrade level of the tower. \end{DoxyCompactList}\item 
+FORCEINLINE float \mbox{\hyperlink{class_a_tower_a588ca30b3dffbd90201c11e496a68c7c}{Get\+Damage}} () const
+\begin{DoxyCompactList}\small\item\em Gets the damage dealt by each projectile. \end{DoxyCompactList}\item 
+FORCEINLINE float \mbox{\hyperlink{class_a_tower_ad3a7aeaed5631750ca1d2a6a9b9e4b09}{Get\+Fire\+Interval}} () const
+\begin{DoxyCompactList}\small\item\em Gets the interval between shots. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_a_tower_a015701f551f3e7e736161d6e52998a50}{Upgrade}} (\mbox{\hyperlink{class_a_t_d_player_state}{ATDPlayer\+State}} \texorpdfstring{$\ast$}{*}Player\+State)
+\begin{DoxyCompactList}\small\item\em Attempts to upgrade the tower using the player\textquotesingle{}s resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_a_tower_a6099eb4432fdaa503bb4c99466657a83}{Begin\+Play}} () override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+UStatic\+Mesh\+Component \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_a_tower_aef41cfc0cf045f746fff6483c959fd10}{Tower\+Mesh}} = nullptr
+\item 
+UScene\+Component \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_a_tower_aac93dac8b1fb80a2ef341073708ff312}{Muzzle}} = nullptr
+\item 
+float \mbox{\hyperlink{class_a_tower_a15cd93bc6b3028c3a1ed22b0ede3b3b0}{Fire\+Range}} = 1500.f
+\item 
+float \mbox{\hyperlink{class_a_tower_a5b7f889a550215b5d453609234b5551d}{Fire\+Interval}} = 1.f
+\item 
+TSubclass\+Of$<$ \mbox{\hyperlink{class_a_projectile}{AProjectile}} $>$ \mbox{\hyperlink{class_a_tower_a5cbeeaa9d74d59ab788c9437aced82fc}{Projectile\+Class}}
+\item 
+float \mbox{\hyperlink{class_a_tower_a936b994b42c7ff99432ac98490dad5a7}{Projectile\+Damage}} = 20.f
+\item 
+float \mbox{\hyperlink{class_a_tower_a32642ca4d83be54dc132ed8ceae32569}{Projectile\+Speed}} = 2000.f
+\item 
+int32 \mbox{\hyperlink{class_a_tower_abf0e519d1aec9dde5bf0a5dc872af45b}{Upgrade\+Cost}} = 50
+\item 
+int32 \mbox{\hyperlink{class_a_tower_aed77e9b2d9c7b632fb95c557b4547503}{Level}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Cannon tower that searches for the nearest enemy in range and fires periodically. Supports upgrades using player currency. 
+
+Design Notes\+:
+\begin{DoxyItemize}
+\item Tick is disabled; uses a timer for firing logic.
+\item Contains safe early exits (e.\+g., null checks for UWorld).
+\item Provides public getters for Blueprint/\+UI and testing. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_a_tower_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_a_tower_ae7c0e44340c8f10139a5efa1e204f2f7}\index{ATower@{ATower}!ATower@{ATower}}
+\index{ATower@{ATower}!ATower@{ATower}}
+\doxysubsubsection{\texorpdfstring{ATower()}{ATower()}}
+{\footnotesize\ttfamily \label{class_a_tower_ae7c0e44340c8f10139a5efa1e204f2f7} 
+ATower\+::\+ATower (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Default constructor. Initializes default tower values. 
+
+\label{doc-func-members}
+\Hypertarget{class_a_tower_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_a_tower_a6099eb4432fdaa503bb4c99466657a83}\index{ATower@{ATower}!BeginPlay@{BeginPlay}}
+\index{BeginPlay@{BeginPlay}!ATower@{ATower}}
+\doxysubsubsection{\texorpdfstring{BeginPlay()}{BeginPlay()}}
+{\footnotesize\ttfamily \label{class_a_tower_a6099eb4432fdaa503bb4c99466657a83} 
+virtual void ATower\+::\+Begin\+Play (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Called when the game starts. \Hypertarget{class_a_tower_a588ca30b3dffbd90201c11e496a68c7c}\index{ATower@{ATower}!GetDamage@{GetDamage}}
+\index{GetDamage@{GetDamage}!ATower@{ATower}}
+\doxysubsubsection{\texorpdfstring{GetDamage()}{GetDamage()}}
+{\footnotesize\ttfamily \label{class_a_tower_a588ca30b3dffbd90201c11e496a68c7c} 
+FORCEINLINE float ATower\+::\+Get\+Damage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the damage dealt by each projectile. 
+
+\begin{DoxyReturn}{Returns}
+Projectile damage value. 
+\end{DoxyReturn}
+\Hypertarget{class_a_tower_ad3a7aeaed5631750ca1d2a6a9b9e4b09}\index{ATower@{ATower}!GetFireInterval@{GetFireInterval}}
+\index{GetFireInterval@{GetFireInterval}!ATower@{ATower}}
+\doxysubsubsection{\texorpdfstring{GetFireInterval()}{GetFireInterval()}}
+{\footnotesize\ttfamily \label{class_a_tower_ad3a7aeaed5631750ca1d2a6a9b9e4b09} 
+FORCEINLINE float ATower\+::\+Get\+Fire\+Interval (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the interval between shots. 
+
+\begin{DoxyReturn}{Returns}
+Time between shots in seconds. 
+\end{DoxyReturn}
+\Hypertarget{class_a_tower_ade0f8324c2282e43b822bff120a22043}\index{ATower@{ATower}!GetTowerLevel@{GetTowerLevel}}
+\index{GetTowerLevel@{GetTowerLevel}!ATower@{ATower}}
+\doxysubsubsection{\texorpdfstring{GetTowerLevel()}{GetTowerLevel()}}
+{\footnotesize\ttfamily \label{class_a_tower_ade0f8324c2282e43b822bff120a22043} 
+FORCEINLINE int32 ATower\+::\+Get\+Tower\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current upgrade level of the tower. 
+
+\begin{DoxyReturn}{Returns}
+The current tower level. 
+\end{DoxyReturn}
+\Hypertarget{class_a_tower_a015701f551f3e7e736161d6e52998a50}\index{ATower@{ATower}!Upgrade@{Upgrade}}
+\index{Upgrade@{Upgrade}!ATower@{ATower}}
+\doxysubsubsection{\texorpdfstring{Upgrade()}{Upgrade()}}
+{\footnotesize\ttfamily \label{class_a_tower_a015701f551f3e7e736161d6e52998a50} 
+bool ATower\+::\+Upgrade (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_t_d_player_state}{ATDPlayer\+State}} \texorpdfstring{$\ast$}{*}}]{Player\+State}{}\end{DoxyParamCaption})}
+
+
+
+Attempts to upgrade the tower using the player\textquotesingle{}s resources. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Player\+State} & The player\textquotesingle{}s state (used to deduct money). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the upgrade was successful; false otherwise. 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_a_tower_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_a_tower_a5b7f889a550215b5d453609234b5551d}\index{ATower@{ATower}!FireInterval@{FireInterval}}
+\index{FireInterval@{FireInterval}!ATower@{ATower}}
+\doxysubsubsection{\texorpdfstring{FireInterval}{FireInterval}}
+{\footnotesize\ttfamily \label{class_a_tower_a5b7f889a550215b5d453609234b5551d} 
+float ATower\+::\+Fire\+Interval = 1.f\hspace{0.3cm}{\ttfamily [protected]}}
+
+Time interval between each projectile fired. \Hypertarget{class_a_tower_a15cd93bc6b3028c3a1ed22b0ede3b3b0}\index{ATower@{ATower}!FireRange@{FireRange}}
+\index{FireRange@{FireRange}!ATower@{ATower}}
+\doxysubsubsection{\texorpdfstring{FireRange}{FireRange}}
+{\footnotesize\ttfamily \label{class_a_tower_a15cd93bc6b3028c3a1ed22b0ede3b3b0} 
+float ATower\+::\+Fire\+Range = 1500.f\hspace{0.3cm}{\ttfamily [protected]}}
+
+Maximum range the tower can detect and fire at enemies. \Hypertarget{class_a_tower_aed77e9b2d9c7b632fb95c557b4547503}\index{ATower@{ATower}!Level@{Level}}
+\index{Level@{Level}!ATower@{ATower}}
+\doxysubsubsection{\texorpdfstring{Level}{Level}}
+{\footnotesize\ttfamily \label{class_a_tower_aed77e9b2d9c7b632fb95c557b4547503} 
+int32 ATower\+::\+Level = 1\hspace{0.3cm}{\ttfamily [protected]}}
+
+Current level of the tower. \Hypertarget{class_a_tower_aac93dac8b1fb80a2ef341073708ff312}\index{ATower@{ATower}!Muzzle@{Muzzle}}
+\index{Muzzle@{Muzzle}!ATower@{ATower}}
+\doxysubsubsection{\texorpdfstring{Muzzle}{Muzzle}}
+{\footnotesize\ttfamily \label{class_a_tower_aac93dac8b1fb80a2ef341073708ff312} 
+UScene\+Component\texorpdfstring{$\ast$}{*} ATower\+::\+Muzzle = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+Scene component representing the muzzle (firing point). \Hypertarget{class_a_tower_a5cbeeaa9d74d59ab788c9437aced82fc}\index{ATower@{ATower}!ProjectileClass@{ProjectileClass}}
+\index{ProjectileClass@{ProjectileClass}!ATower@{ATower}}
+\doxysubsubsection{\texorpdfstring{ProjectileClass}{ProjectileClass}}
+{\footnotesize\ttfamily \label{class_a_tower_a5cbeeaa9d74d59ab788c9437aced82fc} 
+TSubclass\+Of$<$\mbox{\hyperlink{class_a_projectile}{AProjectile}}$>$ ATower\+::\+Projectile\+Class\hspace{0.3cm}{\ttfamily [protected]}}
+
+The class of projectile to spawn when firing. \Hypertarget{class_a_tower_a936b994b42c7ff99432ac98490dad5a7}\index{ATower@{ATower}!ProjectileDamage@{ProjectileDamage}}
+\index{ProjectileDamage@{ProjectileDamage}!ATower@{ATower}}
+\doxysubsubsection{\texorpdfstring{ProjectileDamage}{ProjectileDamage}}
+{\footnotesize\ttfamily \label{class_a_tower_a936b994b42c7ff99432ac98490dad5a7} 
+float ATower\+::\+Projectile\+Damage = 20.f\hspace{0.3cm}{\ttfamily [protected]}}
+
+Damage dealt by the tower\textquotesingle{}s projectile. \Hypertarget{class_a_tower_a32642ca4d83be54dc132ed8ceae32569}\index{ATower@{ATower}!ProjectileSpeed@{ProjectileSpeed}}
+\index{ProjectileSpeed@{ProjectileSpeed}!ATower@{ATower}}
+\doxysubsubsection{\texorpdfstring{ProjectileSpeed}{ProjectileSpeed}}
+{\footnotesize\ttfamily \label{class_a_tower_a32642ca4d83be54dc132ed8ceae32569} 
+float ATower\+::\+Projectile\+Speed = 2000.f\hspace{0.3cm}{\ttfamily [protected]}}
+
+Speed at which the projectile travels. \Hypertarget{class_a_tower_aef41cfc0cf045f746fff6483c959fd10}\index{ATower@{ATower}!TowerMesh@{TowerMesh}}
+\index{TowerMesh@{TowerMesh}!ATower@{ATower}}
+\doxysubsubsection{\texorpdfstring{TowerMesh}{TowerMesh}}
+{\footnotesize\ttfamily \label{class_a_tower_aef41cfc0cf045f746fff6483c959fd10} 
+UStatic\+Mesh\+Component\texorpdfstring{$\ast$}{*} ATower\+::\+Tower\+Mesh = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+Static mesh representing the tower. \Hypertarget{class_a_tower_abf0e519d1aec9dde5bf0a5dc872af45b}\index{ATower@{ATower}!UpgradeCost@{UpgradeCost}}
+\index{UpgradeCost@{UpgradeCost}!ATower@{ATower}}
+\doxysubsubsection{\texorpdfstring{UpgradeCost}{UpgradeCost}}
+{\footnotesize\ttfamily \label{class_a_tower_abf0e519d1aec9dde5bf0a5dc872af45b} 
+int32 ATower\+::\+Upgrade\+Cost = 50\hspace{0.3cm}{\ttfamily [protected]}}
+
+Cost to upgrade the tower. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_tower_8h}{Tower.\+h}}\end{DoxyCompactItemize}

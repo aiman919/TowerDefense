@@ -7,7 +7,7 @@ void ATDPlayerState::AddMoney(int32 Amount)
 	if (!HasAuthority() || Amount <= 0) return;
 
 	Money += Amount;
-	BroadcastMoneyChanged();          // сервер вызывает локально; клиенты узнают через OnRep
+	BroadcastMoneyChanged();          
 }
 
 bool ATDPlayerState::SpendMoney(int32 Amount)
@@ -28,7 +28,7 @@ void ATDPlayerState::OnRep_Money(int32 /*OldMoney*/)
 void ATDPlayerState::BroadcastMoneyChanged()
 {
 	OnMoneyChanged.Broadcast(Money);
-	// TODO: обновить HUD (Blueprint)
+	
 }
 
 void ATDPlayerState::GetLifetimeReplicatedProps(

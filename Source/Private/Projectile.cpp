@@ -27,7 +27,7 @@ AProjectile::AProjectile()
 	MoveComp->bRotationFollowsVelocity = true;
 	MoveComp->ProjectileGravityScale   = 0.f;
 
-	InitialLifeSpan = LifeSeconds;   // удалится автоматически
+	InitialLifeSpan = LifeSeconds;   
 }
 
 void AProjectile::InitProjectile(float InDamage, float InSpeed)

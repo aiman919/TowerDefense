@@ -1,5 +1,4 @@
-﻿// MyProjectPlayerController.cpp
-#include "MyProjectPlayerController.h"
+﻿#include "MyProjectPlayerController.h"
 
 DEFINE_LOG_CATEGORY(LogMyPlayerController);
 
@@ -24,7 +23,7 @@ void AMyProjectPlayerController::SetupInputComponent()
 {
 	Super::SetupInputComponent();
 
-	// Подключаем mapping-context (клиент-side)
+	
 	if (DefaultMappingContext)
 	{
 		if (UEnhancedInputLocalPlayerSubsystem* Sub =
@@ -34,7 +33,7 @@ void AMyProjectPlayerController::SetupInputComponent()
 		}
 	}
 
-	// Биндим действие
+	
 	if (UEnhancedInputComponent* EIC = Cast<UEnhancedInputComponent>(InputComponent))
 	{
 		if (SpawnTowerAction)

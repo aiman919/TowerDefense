@@ -1,0 +1,33 @@
+\doxysection{My\+Project\+Character.\+h}
+\hypertarget{_my_project_character_8h_source}{}\label{_my_project_character_8h_source}\mbox{\hyperlink{_my_project_character_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ MyProjectCharacter.h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}GameFramework/Character.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Camera/CameraComponent.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}GameFramework/SpringArmComponent.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}MyProjectCharacter.generated.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00019\ UCLASS(Blueprintable)}
+\DoxyCodeLine{00020\ class\ MYPROJECT\_API\ \mbox{\hyperlink{class_a_my_project_character_a30e19ba209e355ebbeffe6b52f1fca9c}{AMyProjectCharacter}}\ :\ public\ ACharacter}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_a_my_project_character_a30e19ba209e355ebbeffe6b52f1fca9c}{AMyProjectCharacter}}();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00032\ \ \ \ \ FORCEINLINE\ UCameraComponent*\ \mbox{\hyperlink{class_a_my_project_character_ad0bdbea695029560ad431172ea5dace4}{GetTopDownCameraComponent}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ TopDownCameraComponent;\ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ FORCEINLINE\ USpringArmComponent*\ \mbox{\hyperlink{class_a_my_project_character_abcb7d8e6fb0cf7bf7f1500c869874d6f}{GetCameraBoom}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ CameraBoom;\ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \ \ UPROPERTY(VisibleAnywhere,\ BlueprintReadOnly,\ Category\ =\ Camera,\ meta\ =\ (AllowPrivateAccess\ =\ \textcolor{stringliteral}{"{}true"{}}))}
+\DoxyCodeLine{00045\ \ \ \ \ UCameraComponent*\ TopDownCameraComponent;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \ \ \ \ UPROPERTY(VisibleAnywhere,\ BlueprintReadOnly,\ Category\ =\ Camera,\ meta\ =\ (AllowPrivateAccess\ =\ \textcolor{stringliteral}{"{}true"{}}))}
+\DoxyCodeLine{00051\ \ \ \ \ USpringArmComponent*\ CameraBoom;}
+\DoxyCodeLine{00052\ \};}
+
+\end{DoxyCode}

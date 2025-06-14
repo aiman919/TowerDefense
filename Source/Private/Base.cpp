@@ -5,7 +5,7 @@
 ABase::ABase()
 {
     bReplicates = true;
-    Health      = MaxHealth;     // На старте — полный запас.
+    Health      = MaxHealth;     
 }
 
 float ABase::TakeDamage(float DamageAmount,
@@ -15,7 +15,7 @@ float ABase::TakeDamage(float DamageAmount,
 {
     const int32 Rounded = FMath::RoundToInt(DamageAmount);
     ApplyDamageInternal(Rounded);
-    return static_cast<float>(Rounded);   // «Фактический» урон.
+    return static_cast<float>(Rounded);  
 }
 
 void ABase::ApplyDamageInternal(int32 Damage)
@@ -26,9 +26,9 @@ void ABase::ApplyDamageInternal(int32 Damage)
     const int32 OldHealth = Health;
     Health = FMath::Clamp(Health - Damage, 0, MaxHealth);
 
-    if (Health != OldHealth)            // Здоровье действительно изменилось
+    if (Health != OldHealth)            
     {
-        OnRep_Health();                 // локальный отклик
+        OnRep_Health();                 
         if (Health <= 0)
             HandleDestroyed();
     }
@@ -36,16 +36,16 @@ void ABase::ApplyDamageInternal(int32 Damage)
 
 void ABase::OnRep_Health()
 {
-    // Здесь можно вызвать BP-ивент, проиграть звук/FX и т.п.
+    
 }
 
 void ABase::HandleDestroyed()
 {
-    Destroy();                          // Сервер удалит, клиенты узнают через репликацию
+    Destroy();                          
 }
 
 void ABase::GetLifetimeReplicatedProps(
-    TArray<FLifetimeProperty>& OutLifetimeProps   // ← было Out
+    TArray<FLifetimeProperty>& OutLifetimeProps   
 ) const
 {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);

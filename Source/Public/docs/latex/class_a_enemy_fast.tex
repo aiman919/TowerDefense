@@ -1,0 +1,146 @@
+\doxysection{AEnemy\+Fast Class Reference}
+\hypertarget{class_a_enemy_fast}{}\label{class_a_enemy_fast}\index{AEnemyFast@{AEnemyFast}}
+
+
+Lightweight and fast enemy with lower HP but higher speed and DPS.  
+
+
+
+
+{\ttfamily \#include $<$Enemy\+Fast.\+h$>$}
+
+Inheritance diagram for AEnemy\+Fast\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_a_enemy_fast}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a_enemy_fast_aa87a77d88f5ff38badcc35927de8105f}{AEnemy\+Fast}} ()
+\item 
+FORCEINLINE float \mbox{\hyperlink{class_a_enemy_fast_ac32110765615f0eccc8423b16a83ffd0}{Get\+Move\+Speed\+Fast}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current movement speed (Max\+Walk\+Speed). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_a_enemy}{AEnemy}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a_enemy_aedf84a90a2b69cd2568754b48f22a58f}{DECLARE\+\_\+\+DYNAMIC\+\_\+\+MULTICAST\+\_\+\+DELEGATE\+\_\+\+One\+Param}} (FOn\+Enemy\+Health\+Changed, int32, New\+Health)
+\item 
+\mbox{\hyperlink{class_a_enemy_aaaf95ea6f1f47b3c3defcaf90390e00c}{DECLARE\+\_\+\+DYNAMIC\+\_\+\+MULTICAST\+\_\+\+DELEGATE}} (FOn\+Enemy\+Death)
+\item 
+\mbox{\hyperlink{class_a_enemy_a78162cd7740ff2a86ba73ced9a4ae9be}{AEnemy}} ()
+\item 
+virtual void \mbox{\hyperlink{class_a_enemy_a0c4828f87d0151ea1b8fc34e8b6372b6}{Receive\+Damage}} (int32 Amount, AController \texorpdfstring{$\ast$}{*}Damage\+Instigator=nullptr)
+\begin{DoxyCompactList}\small\item\em Applies damage to the enemy, considering armor. \end{DoxyCompactList}\item 
+FORCEINLINE void \mbox{\hyperlink{class_a_enemy_afa2dc57e7a91e6701ca31bbef96a5456}{Receive\+Damage\+BP}} (int32 Amount)
+\begin{DoxyCompactList}\small\item\em Blueprint-\/friendly wrapper for receiving damage without instigator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_enemy_a5748ab7e718a650609bfa43e4c0a43ae}{Start\+Attacking}} ()
+\begin{DoxyCompactList}\small\item\em Starts periodic attacks if Attack\+Rate is greater than zero. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_enemy_a52a42a1a22c9343027e5ab510abf5eb9}{Attack}} ()
+\begin{DoxyCompactList}\small\item\em Performs a single attack. Can be overridden in Blueprints. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_enemy_a76a288eb050ab88e61cdff6ab03f7f1c}{Apply\+Difficulty\+Scaling}} (int32 Wave\+Index, float Strength\+Multiplier=1.f)
+\begin{DoxyCompactList}\small\item\em Increases stats based on wave index and scaling multiplier. \end{DoxyCompactList}\item 
+FORCEINLINE int32 \mbox{\hyperlink{class_a_enemy_ae860d23a5375609c63337810f9a33b17}{Get\+Health}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current health of the enemy. \end{DoxyCompactList}\item 
+FORCEINLINE bool \mbox{\hyperlink{class_a_enemy_abf4a3f96376d5dbcf2dba6276af576e1}{Is\+Dead}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the enemy is dead. \end{DoxyCompactList}\item 
+FORCEINLINE AController \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_a_enemy_a0c217545806e56e2f7f96f111049ddf5}{Get\+Last\+Instigator}} () const
+\begin{DoxyCompactList}\small\item\em Returns the controller that last caused damage to this enemy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_a_enemy}{AEnemy}}}
+\begin{DoxyCompactItemize}
+\item 
+FOn\+Enemy\+Health\+Changed \mbox{\hyperlink{class_a_enemy_ab79212dc6ec8d2308c741afc53f2fc1c}{On\+Health\+Changed}}
+\item 
+FOn\+Enemy\+Death \mbox{\hyperlink{class_a_enemy_a7ea9d4a636b74d30bec64cae28171a7b}{On\+Death\+Evt}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_a_enemy}{AEnemy}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_a_enemy_a83afbc9a495ee7612a67c8c65312332c}{Begin\+Play}} () override
+\item 
+virtual void \mbox{\hyperlink{class_a_enemy_afedecbf71ef8f774326e0e1de6f7dfb3}{End\+Play}} (const EEnd\+Play\+Reason\+::\+Type End\+Play\+Reason) override
+\item 
+virtual void \mbox{\hyperlink{class_a_enemy_a92fceecab0a07b10fb436677d1c5fbda}{Get\+Lifetime\+Replicated\+Props}} (TArray$<$ FLifetime\+Property $>$ \&Out\+Lifetime\+Props) const override
+\begin{DoxyCompactList}\small\item\em Registers properties for network replication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_enemy_a540cef329e7430d30a1900c5641bba76}{On\+Rep\+\_\+\+Health}} ()
+\item 
+void \mbox{\hyperlink{class_a_enemy_a02b3f90fec06beec4d2d426549f43cf6}{Handle\+Death}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_a_enemy}{AEnemy}}}
+\begin{DoxyCompactItemize}
+\item 
+AActor \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_a_enemy_a823666051777badb329d3fbcd1371329}{Target\+Actor}} = nullptr
+\item 
+float \mbox{\hyperlink{class_a_enemy_a483014742c9f8b5a63a1d167573e32b1}{Acceptance\+Radius}} = 30.f
+\item 
+float \mbox{\hyperlink{class_a_enemy_a016b75b460707f453651c8308ef5d45a}{Move\+Speed}} = 400.f
+\item 
+int32 \mbox{\hyperlink{class_a_enemy_a5df1a51abbcec8cba9a5d8907809cbd4}{Max\+Health}} = 1000
+\item 
+int32 \mbox{\hyperlink{class_a_enemy_a47c82f00f66dd58b7ca61c00312c79f6}{Armor}} = 0
+\item 
+int32 \mbox{\hyperlink{class_a_enemy_a2914aa97c4a440bd1996dc1b5144b88c}{Attack\+Damage}} = 50
+\item 
+float \mbox{\hyperlink{class_a_enemy_acffe379d6570b11e702beeec02488537}{Attack\+Rate}} = 1.f
+\item 
+int32 \mbox{\hyperlink{class_a_enemy_ac0a6a640e1de93e48464ae152bb35433}{Money\+Reward}} = 10
+\item 
+float \mbox{\hyperlink{class_a_enemy_a500b8ec9443efab902b845644cc8834a}{Health\+Pct\+Per\+Wave}} = 0.\+20f
+\item 
+float \mbox{\hyperlink{class_a_enemy_adbc23d7c2880514474b90ff4472bc46a}{Damage\+Pct\+Per\+Wave}} = 0.\+15f
+\item 
+int32 \mbox{\hyperlink{class_a_enemy_abf6309339d906ad8264e7d83589b8965}{Max\+Health\+Cap}} = 10000
+\item 
+int32 \mbox{\hyperlink{class_a_enemy_a84a37ec55e93fe53d47c9b336fd878fb}{Damage\+Cap}} = 2000
+\item 
+int32 \mbox{\hyperlink{class_a_enemy_a9cf4934085ad018e693c984c531a4be5}{Current\+Health}} = 0
+\item 
+AController \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_a_enemy_a911942ae9042b04919154b620f2fe27d}{Last\+Damage\+Instigator}} = nullptr
+\item 
+FTimer\+Handle \mbox{\hyperlink{class_a_enemy_ae4139a799749eceedd51d5a68a210779}{Attack\+Timer\+Handle}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lightweight and fast enemy with lower HP but higher speed and DPS. 
+
+Notes\+:
+\begin{DoxyItemize}
+\item No need to override Begin\+Play; movement logic is inherited from \doxylink{class_a_enemy}{AEnemy}.
+\item Public speed getter is exposed for Blueprint and UI use. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_a_enemy_fast_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_a_enemy_fast_aa87a77d88f5ff38badcc35927de8105f}\index{AEnemyFast@{AEnemyFast}!AEnemyFast@{AEnemyFast}}
+\index{AEnemyFast@{AEnemyFast}!AEnemyFast@{AEnemyFast}}
+\doxysubsubsection{\texorpdfstring{AEnemyFast()}{AEnemyFast()}}
+{\footnotesize\ttfamily \label{class_a_enemy_fast_aa87a77d88f5ff38badcc35927de8105f} 
+AEnemy\+Fast\+::\+AEnemy\+Fast (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Default constructor for the fast enemy. 
+
+\label{doc-func-members}
+\Hypertarget{class_a_enemy_fast_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_a_enemy_fast_ac32110765615f0eccc8423b16a83ffd0}\index{AEnemyFast@{AEnemyFast}!GetMoveSpeedFast@{GetMoveSpeedFast}}
+\index{GetMoveSpeedFast@{GetMoveSpeedFast}!AEnemyFast@{AEnemyFast}}
+\doxysubsubsection{\texorpdfstring{GetMoveSpeedFast()}{GetMoveSpeedFast()}}
+{\footnotesize\ttfamily \label{class_a_enemy_fast_ac32110765615f0eccc8423b16a83ffd0} 
+FORCEINLINE float AEnemy\+Fast\+::\+Get\+Move\+Speed\+Fast (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current movement speed (Max\+Walk\+Speed). 
+
+\begin{DoxyReturn}{Returns}
+Current movement speed of the enemy. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_enemy_fast_8h}{Enemy\+Fast.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,75 @@
+\doxysection{AMy\+Project\+Game\+Mode Class Reference}
+\hypertarget{class_a_my_project_game_mode}{}\label{class_a_my_project_game_mode}\index{AMyProjectGameMode@{AMyProjectGameMode}}
+
+
+Custom game mode that initiates enemy waves at all spawn points when the match starts.  
+
+
+
+
+{\ttfamily \#include $<$My\+Project\+Game\+Mode.\+h$>$}
+
+Inheritance diagram for AMy\+Project\+Game\+Mode\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_my_project_game_mode}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_a_my_project_game_mode_a61cd726580cdf0ebd01fefc96b9aa012}{Begin\+Play}} () override
+\begin{DoxyCompactList}\small\item\em Called when the game begins (server-\/side only). Automatically starts waves at all registered spawn points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int32 \mbox{\hyperlink{class_a_my_project_game_mode_a9b87403f6a07ed7bdf9ed0e7c0c46ef6}{Calc\+Initial\+Wave\+Size}} (const \mbox{\hyperlink{class_a_spawn_point}{ASpawn\+Point}} \texorpdfstring{$\ast$}{*}Spawn\+Point)
+\begin{DoxyCompactList}\small\item\em Calculates the initial wave size based on the specified spawn point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Custom game mode that initiates enemy waves at all spawn points when the match starts. 
+
+Features\+:
+\begin{DoxyItemize}
+\item Uses static helper function to avoid hardcoded values.
+\item Validates {\ttfamily Has\+Authority()} and {\ttfamily Get\+World()} to ensure logic runs only on the server.
+\item Avoids code duplication in wave size logic. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_a_my_project_game_mode_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_a_my_project_game_mode_a61cd726580cdf0ebd01fefc96b9aa012}\index{AMyProjectGameMode@{AMyProjectGameMode}!BeginPlay@{BeginPlay}}
+\index{BeginPlay@{BeginPlay}!AMyProjectGameMode@{AMyProjectGameMode}}
+\doxysubsubsection{\texorpdfstring{BeginPlay()}{BeginPlay()}}
+{\footnotesize\ttfamily \label{class_a_my_project_game_mode_a61cd726580cdf0ebd01fefc96b9aa012} 
+virtual void AMy\+Project\+Game\+Mode\+::\+Begin\+Play (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the game begins (server-\/side only). Automatically starts waves at all registered spawn points. 
+
+\Hypertarget{class_a_my_project_game_mode_a9b87403f6a07ed7bdf9ed0e7c0c46ef6}\index{AMyProjectGameMode@{AMyProjectGameMode}!CalcInitialWaveSize@{CalcInitialWaveSize}}
+\index{CalcInitialWaveSize@{CalcInitialWaveSize}!AMyProjectGameMode@{AMyProjectGameMode}}
+\doxysubsubsection{\texorpdfstring{CalcInitialWaveSize()}{CalcInitialWaveSize()}}
+{\footnotesize\ttfamily \label{class_a_my_project_game_mode_a9b87403f6a07ed7bdf9ed0e7c0c46ef6} 
+int32 AMy\+Project\+Game\+Mode\+::\+Calc\+Initial\+Wave\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_a_spawn_point}{ASpawn\+Point}} \texorpdfstring{$\ast$}{*}}]{Spawn\+Point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates the initial wave size based on the specified spawn point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Spawn\+Point} & A pointer to the spawn point to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of enemies in the first wave. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_my_project_game_mode_8h}{My\+Project\+Game\+Mode.\+h}}\end{DoxyCompactItemize}

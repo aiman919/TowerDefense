@@ -1,0 +1,405 @@
+\doxysection{AEnemy Class Reference}
+\hypertarget{class_a_enemy}{}\label{class_a_enemy}\index{AEnemy@{AEnemy}}
+
+
+Enemy character that moves toward the base, deals damage, and scales with waves.  
+
+
+
+
+{\ttfamily \#include $<$Enemy.\+h$>$}
+
+Inheritance diagram for AEnemy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_a_enemy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a_enemy_aedf84a90a2b69cd2568754b48f22a58f}{DECLARE\+\_\+\+DYNAMIC\+\_\+\+MULTICAST\+\_\+\+DELEGATE\+\_\+\+One\+Param}} (FOn\+Enemy\+Health\+Changed, int32, New\+Health)
+\item 
+\mbox{\hyperlink{class_a_enemy_aaaf95ea6f1f47b3c3defcaf90390e00c}{DECLARE\+\_\+\+DYNAMIC\+\_\+\+MULTICAST\+\_\+\+DELEGATE}} (FOn\+Enemy\+Death)
+\item 
+\mbox{\hyperlink{class_a_enemy_a78162cd7740ff2a86ba73ced9a4ae9be}{AEnemy}} ()
+\item 
+virtual void \mbox{\hyperlink{class_a_enemy_a0c4828f87d0151ea1b8fc34e8b6372b6}{Receive\+Damage}} (int32 Amount, AController \texorpdfstring{$\ast$}{*}Damage\+Instigator=nullptr)
+\begin{DoxyCompactList}\small\item\em Applies damage to the enemy, considering armor. \end{DoxyCompactList}\item 
+FORCEINLINE void \mbox{\hyperlink{class_a_enemy_afa2dc57e7a91e6701ca31bbef96a5456}{Receive\+Damage\+BP}} (int32 Amount)
+\begin{DoxyCompactList}\small\item\em Blueprint-\/friendly wrapper for receiving damage without instigator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_enemy_a5748ab7e718a650609bfa43e4c0a43ae}{Start\+Attacking}} ()
+\begin{DoxyCompactList}\small\item\em Starts periodic attacks if Attack\+Rate is greater than zero. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_enemy_a52a42a1a22c9343027e5ab510abf5eb9}{Attack}} ()
+\begin{DoxyCompactList}\small\item\em Performs a single attack. Can be overridden in Blueprints. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_enemy_a76a288eb050ab88e61cdff6ab03f7f1c}{Apply\+Difficulty\+Scaling}} (int32 Wave\+Index, float Strength\+Multiplier=1.f)
+\begin{DoxyCompactList}\small\item\em Increases stats based on wave index and scaling multiplier. \end{DoxyCompactList}\item 
+FORCEINLINE int32 \mbox{\hyperlink{class_a_enemy_ae860d23a5375609c63337810f9a33b17}{Get\+Health}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current health of the enemy. \end{DoxyCompactList}\item 
+FORCEINLINE bool \mbox{\hyperlink{class_a_enemy_abf4a3f96376d5dbcf2dba6276af576e1}{Is\+Dead}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the enemy is dead. \end{DoxyCompactList}\item 
+FORCEINLINE AController \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_a_enemy_a0c217545806e56e2f7f96f111049ddf5}{Get\+Last\+Instigator}} () const
+\begin{DoxyCompactList}\small\item\em Returns the controller that last caused damage to this enemy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+FOn\+Enemy\+Health\+Changed \mbox{\hyperlink{class_a_enemy_ab79212dc6ec8d2308c741afc53f2fc1c}{On\+Health\+Changed}}
+\item 
+FOn\+Enemy\+Death \mbox{\hyperlink{class_a_enemy_a7ea9d4a636b74d30bec64cae28171a7b}{On\+Death\+Evt}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_a_enemy_a83afbc9a495ee7612a67c8c65312332c}{Begin\+Play}} () override
+\item 
+virtual void \mbox{\hyperlink{class_a_enemy_afedecbf71ef8f774326e0e1de6f7dfb3}{End\+Play}} (const EEnd\+Play\+Reason\+::\+Type End\+Play\+Reason) override
+\item 
+virtual void \mbox{\hyperlink{class_a_enemy_a92fceecab0a07b10fb436677d1c5fbda}{Get\+Lifetime\+Replicated\+Props}} (TArray$<$ FLifetime\+Property $>$ \&Out\+Lifetime\+Props) const override
+\begin{DoxyCompactList}\small\item\em Registers properties for network replication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_enemy_a540cef329e7430d30a1900c5641bba76}{On\+Rep\+\_\+\+Health}} ()
+\item 
+void \mbox{\hyperlink{class_a_enemy_a02b3f90fec06beec4d2d426549f43cf6}{Handle\+Death}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+AActor \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_a_enemy_a823666051777badb329d3fbcd1371329}{Target\+Actor}} = nullptr
+\item 
+float \mbox{\hyperlink{class_a_enemy_a483014742c9f8b5a63a1d167573e32b1}{Acceptance\+Radius}} = 30.f
+\item 
+float \mbox{\hyperlink{class_a_enemy_a016b75b460707f453651c8308ef5d45a}{Move\+Speed}} = 400.f
+\item 
+int32 \mbox{\hyperlink{class_a_enemy_a5df1a51abbcec8cba9a5d8907809cbd4}{Max\+Health}} = 1000
+\item 
+int32 \mbox{\hyperlink{class_a_enemy_a47c82f00f66dd58b7ca61c00312c79f6}{Armor}} = 0
+\item 
+int32 \mbox{\hyperlink{class_a_enemy_a2914aa97c4a440bd1996dc1b5144b88c}{Attack\+Damage}} = 50
+\item 
+float \mbox{\hyperlink{class_a_enemy_acffe379d6570b11e702beeec02488537}{Attack\+Rate}} = 1.f
+\item 
+int32 \mbox{\hyperlink{class_a_enemy_ac0a6a640e1de93e48464ae152bb35433}{Money\+Reward}} = 10
+\item 
+float \mbox{\hyperlink{class_a_enemy_a500b8ec9443efab902b845644cc8834a}{Health\+Pct\+Per\+Wave}} = 0.\+20f
+\item 
+float \mbox{\hyperlink{class_a_enemy_adbc23d7c2880514474b90ff4472bc46a}{Damage\+Pct\+Per\+Wave}} = 0.\+15f
+\item 
+int32 \mbox{\hyperlink{class_a_enemy_abf6309339d906ad8264e7d83589b8965}{Max\+Health\+Cap}} = 10000
+\item 
+int32 \mbox{\hyperlink{class_a_enemy_a84a37ec55e93fe53d47c9b336fd878fb}{Damage\+Cap}} = 2000
+\item 
+int32 \mbox{\hyperlink{class_a_enemy_a9cf4934085ad018e693c984c531a4be5}{Current\+Health}} = 0
+\item 
+AController \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_a_enemy_a911942ae9042b04919154b620f2fe27d}{Last\+Damage\+Instigator}} = nullptr
+\item 
+FTimer\+Handle \mbox{\hyperlink{class_a_enemy_ae4139a799749eceedd51d5a68a210779}{Attack\+Timer\+Handle}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Enemy character that moves toward the base, deals damage, and scales with waves. 
+
+Optimized for replication and performance\+:
+\begin{DoxyItemize}
+\item Avoids redundant clamps and assignments.
+\item On\+Health\+Changed triggers only when health truly changes.
+\item Attack timer is created once and cleared on death/\+End\+Play.
+\item Replicates key parameters like Current\+Health and Attack\+Damage. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_a_enemy_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_a_enemy_a78162cd7740ff2a86ba73ced9a4ae9be}\index{AEnemy@{AEnemy}!AEnemy@{AEnemy}}
+\index{AEnemy@{AEnemy}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{AEnemy()}{AEnemy()}}
+{\footnotesize\ttfamily \label{class_a_enemy_a78162cd7740ff2a86ba73ced9a4ae9be} 
+AEnemy\+::\+AEnemy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Constructor that initializes default values. 
+
+\label{doc-func-members}
+\Hypertarget{class_a_enemy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_a_enemy_a76a288eb050ab88e61cdff6ab03f7f1c}\index{AEnemy@{AEnemy}!ApplyDifficultyScaling@{ApplyDifficultyScaling}}
+\index{ApplyDifficultyScaling@{ApplyDifficultyScaling}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{ApplyDifficultyScaling()}{ApplyDifficultyScaling()}}
+{\footnotesize\ttfamily \label{class_a_enemy_a76a288eb050ab88e61cdff6ab03f7f1c} 
+virtual void AEnemy\+::\+Apply\+Difficulty\+Scaling (\begin{DoxyParamCaption}\item[{int32}]{Wave\+Index}{, }\item[{float}]{Strength\+Multiplier}{ = {\ttfamily 1.f}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Increases stats based on wave index and scaling multiplier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Wave\+Index} & The current wave number. \\
+\hline
+{\em Strength\+Multiplier} & Additional multiplier for scaling. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_a_enemy_armored_a5501c2d6f7ae839fbc91a527329c9cae}{AEnemy\+Armored}}.
+
+\Hypertarget{class_a_enemy_a52a42a1a22c9343027e5ab510abf5eb9}\index{AEnemy@{AEnemy}!Attack@{Attack}}
+\index{Attack@{Attack}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{Attack()}{Attack()}}
+{\footnotesize\ttfamily \label{class_a_enemy_a52a42a1a22c9343027e5ab510abf5eb9} 
+virtual void AEnemy\+::\+Attack (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Performs a single attack. Can be overridden in Blueprints. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_a_enemy_boss_aa316d7a13bb827e4f8d09cc077ae4253}{AEnemy\+Boss}}.
+
+\Hypertarget{class_a_enemy_a83afbc9a495ee7612a67c8c65312332c}\index{AEnemy@{AEnemy}!BeginPlay@{BeginPlay}}
+\index{BeginPlay@{BeginPlay}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{BeginPlay()}{BeginPlay()}}
+{\footnotesize\ttfamily \label{class_a_enemy_a83afbc9a495ee7612a67c8c65312332c} 
+virtual void AEnemy\+::\+Begin\+Play (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Called when the game starts or when spawned. \Hypertarget{class_a_enemy_aaaf95ea6f1f47b3c3defcaf90390e00c}\index{AEnemy@{AEnemy}!DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE@{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE}}
+\index{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE@{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE()}{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE()}}
+{\footnotesize\ttfamily \label{class_a_enemy_aaaf95ea6f1f47b3c3defcaf90390e00c} 
+AEnemy\+::\+DECLARE\+\_\+\+DYNAMIC\+\_\+\+MULTICAST\+\_\+\+DELEGATE (\begin{DoxyParamCaption}\item[{FOn\+Enemy\+Death}]{}{}\end{DoxyParamCaption})}
+
+Delegate for notifying death event (used in Blueprints/\+UI). \Hypertarget{class_a_enemy_aedf84a90a2b69cd2568754b48f22a58f}\index{AEnemy@{AEnemy}!DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_OneParam@{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_OneParam}}
+\index{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_OneParam@{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_OneParam}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_OneParam()}{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_OneParam()}}
+{\footnotesize\ttfamily \label{class_a_enemy_aedf84a90a2b69cd2568754b48f22a58f} 
+AEnemy\+::\+DECLARE\+\_\+\+DYNAMIC\+\_\+\+MULTICAST\+\_\+\+DELEGATE\+\_\+\+One\+Param (\begin{DoxyParamCaption}\item[{FOn\+Enemy\+Health\+Changed}]{}{, }\item[{int32}]{}{, }\item[{New\+Health}]{}{}\end{DoxyParamCaption})}
+
+Delegate for notifying health changes (used in Blueprints/\+UI). \Hypertarget{class_a_enemy_afedecbf71ef8f774326e0e1de6f7dfb3}\index{AEnemy@{AEnemy}!EndPlay@{EndPlay}}
+\index{EndPlay@{EndPlay}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{EndPlay()}{EndPlay()}}
+{\footnotesize\ttfamily \label{class_a_enemy_afedecbf71ef8f774326e0e1de6f7dfb3} 
+virtual void AEnemy\+::\+End\+Play (\begin{DoxyParamCaption}\item[{const EEnd\+Play\+Reason\+::\+Type}]{End\+Play\+Reason}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Called when the actor is removed from the game. \Hypertarget{class_a_enemy_ae860d23a5375609c63337810f9a33b17}\index{AEnemy@{AEnemy}!GetHealth@{GetHealth}}
+\index{GetHealth@{GetHealth}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{GetHealth()}{GetHealth()}}
+{\footnotesize\ttfamily \label{class_a_enemy_ae860d23a5375609c63337810f9a33b17} 
+FORCEINLINE int32 AEnemy\+::\+Get\+Health (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the current health of the enemy. 
+
+\begin{DoxyReturn}{Returns}
+Current health value. 
+\end{DoxyReturn}
+\Hypertarget{class_a_enemy_a0c217545806e56e2f7f96f111049ddf5}\index{AEnemy@{AEnemy}!GetLastInstigator@{GetLastInstigator}}
+\index{GetLastInstigator@{GetLastInstigator}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{GetLastInstigator()}{GetLastInstigator()}}
+{\footnotesize\ttfamily \label{class_a_enemy_a0c217545806e56e2f7f96f111049ddf5} 
+FORCEINLINE AController \texorpdfstring{$\ast$}{*} AEnemy\+::\+Get\+Last\+Instigator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the controller that last caused damage to this enemy. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the instigator controller. 
+\end{DoxyReturn}
+\Hypertarget{class_a_enemy_a92fceecab0a07b10fb436677d1c5fbda}\index{AEnemy@{AEnemy}!GetLifetimeReplicatedProps@{GetLifetimeReplicatedProps}}
+\index{GetLifetimeReplicatedProps@{GetLifetimeReplicatedProps}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{GetLifetimeReplicatedProps()}{GetLifetimeReplicatedProps()}}
+{\footnotesize\ttfamily \label{class_a_enemy_a92fceecab0a07b10fb436677d1c5fbda} 
+virtual void AEnemy\+::\+Get\+Lifetime\+Replicated\+Props (\begin{DoxyParamCaption}\item[{TArray$<$ FLifetime\+Property $>$ \&}]{Out\+Lifetime\+Props}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Registers properties for network replication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Out\+Lifetime\+Props} & The list of properties to replicate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_a_enemy_a02b3f90fec06beec4d2d426549f43cf6}\index{AEnemy@{AEnemy}!HandleDeath@{HandleDeath}}
+\index{HandleDeath@{HandleDeath}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{HandleDeath()}{HandleDeath()}}
+{\footnotesize\ttfamily \label{class_a_enemy_a02b3f90fec06beec4d2d426549f43cf6} 
+void AEnemy\+::\+Handle\+Death (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Handles death logic and rewards the player. \Hypertarget{class_a_enemy_abf4a3f96376d5dbcf2dba6276af576e1}\index{AEnemy@{AEnemy}!IsDead@{IsDead}}
+\index{IsDead@{IsDead}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{IsDead()}{IsDead()}}
+{\footnotesize\ttfamily \label{class_a_enemy_abf4a3f96376d5dbcf2dba6276af576e1} 
+FORCEINLINE bool AEnemy\+::\+Is\+Dead (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the enemy is dead. 
+
+\begin{DoxyReturn}{Returns}
+True if health is 0 or below. 
+\end{DoxyReturn}
+\Hypertarget{class_a_enemy_a540cef329e7430d30a1900c5641bba76}\index{AEnemy@{AEnemy}!OnRep\_Health@{OnRep\_Health}}
+\index{OnRep\_Health@{OnRep\_Health}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{OnRep\_Health()}{OnRep\_Health()}}
+{\footnotesize\ttfamily \label{class_a_enemy_a540cef329e7430d30a1900c5641bba76} 
+void AEnemy\+::\+On\+Rep\+\_\+\+Health (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Called on clients when Current\+Health changes. \Hypertarget{class_a_enemy_a0c4828f87d0151ea1b8fc34e8b6372b6}\index{AEnemy@{AEnemy}!ReceiveDamage@{ReceiveDamage}}
+\index{ReceiveDamage@{ReceiveDamage}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{ReceiveDamage()}{ReceiveDamage()}}
+{\footnotesize\ttfamily \label{class_a_enemy_a0c4828f87d0151ea1b8fc34e8b6372b6} 
+virtual void AEnemy\+::\+Receive\+Damage (\begin{DoxyParamCaption}\item[{int32}]{Amount}{, }\item[{AController \texorpdfstring{$\ast$}{*}}]{Damage\+Instigator}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Applies damage to the enemy, considering armor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Amount} & The raw damage amount. \\
+\hline
+{\em Damage\+Instigator} & The controller that caused the damage (optional). \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_a_enemy_armored_ae59e25f8a61429b58a7f3bed33c9aebf}{AEnemy\+Armored}}.
+
+\Hypertarget{class_a_enemy_afa2dc57e7a91e6701ca31bbef96a5456}\index{AEnemy@{AEnemy}!ReceiveDamageBP@{ReceiveDamageBP}}
+\index{ReceiveDamageBP@{ReceiveDamageBP}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{ReceiveDamageBP()}{ReceiveDamageBP()}}
+{\footnotesize\ttfamily \label{class_a_enemy_afa2dc57e7a91e6701ca31bbef96a5456} 
+FORCEINLINE void AEnemy\+::\+Receive\+Damage\+BP (\begin{DoxyParamCaption}\item[{int32}]{Amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Blueprint-\/friendly wrapper for receiving damage without instigator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Amount} & Damage amount. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_a_enemy_a5748ab7e718a650609bfa43e4c0a43ae}\index{AEnemy@{AEnemy}!StartAttacking@{StartAttacking}}
+\index{StartAttacking@{StartAttacking}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{StartAttacking()}{StartAttacking()}}
+{\footnotesize\ttfamily \label{class_a_enemy_a5748ab7e718a650609bfa43e4c0a43ae} 
+void AEnemy\+::\+Start\+Attacking (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Starts periodic attacks if Attack\+Rate is greater than zero. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_a_enemy_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_a_enemy_a483014742c9f8b5a63a1d167573e32b1}\index{AEnemy@{AEnemy}!AcceptanceRadius@{AcceptanceRadius}}
+\index{AcceptanceRadius@{AcceptanceRadius}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{AcceptanceRadius}{AcceptanceRadius}}
+{\footnotesize\ttfamily \label{class_a_enemy_a483014742c9f8b5a63a1d167573e32b1} 
+float AEnemy\+::\+Acceptance\+Radius = 30.f\hspace{0.3cm}{\ttfamily [protected]}}
+
+Minimum distance to target before stopping movement. \Hypertarget{class_a_enemy_a47c82f00f66dd58b7ca61c00312c79f6}\index{AEnemy@{AEnemy}!Armor@{Armor}}
+\index{Armor@{Armor}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{Armor}{Armor}}
+{\footnotesize\ttfamily \label{class_a_enemy_a47c82f00f66dd58b7ca61c00312c79f6} 
+int32 AEnemy\+::\+Armor = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+Armor value used to reduce incoming damage. \Hypertarget{class_a_enemy_a2914aa97c4a440bd1996dc1b5144b88c}\index{AEnemy@{AEnemy}!AttackDamage@{AttackDamage}}
+\index{AttackDamage@{AttackDamage}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{AttackDamage}{AttackDamage}}
+{\footnotesize\ttfamily \label{class_a_enemy_a2914aa97c4a440bd1996dc1b5144b88c} 
+int32 AEnemy\+::\+Attack\+Damage = 50\hspace{0.3cm}{\ttfamily [protected]}}
+
+Damage dealt to targets when attacking. \Hypertarget{class_a_enemy_acffe379d6570b11e702beeec02488537}\index{AEnemy@{AEnemy}!AttackRate@{AttackRate}}
+\index{AttackRate@{AttackRate}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{AttackRate}{AttackRate}}
+{\footnotesize\ttfamily \label{class_a_enemy_acffe379d6570b11e702beeec02488537} 
+float AEnemy\+::\+Attack\+Rate = 1.f\hspace{0.3cm}{\ttfamily [protected]}}
+
+Number of attacks per second. \Hypertarget{class_a_enemy_ae4139a799749eceedd51d5a68a210779}\index{AEnemy@{AEnemy}!AttackTimerHandle@{AttackTimerHandle}}
+\index{AttackTimerHandle@{AttackTimerHandle}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{AttackTimerHandle}{AttackTimerHandle}}
+{\footnotesize\ttfamily \label{class_a_enemy_ae4139a799749eceedd51d5a68a210779} 
+FTimer\+Handle AEnemy\+::\+Attack\+Timer\+Handle\hspace{0.3cm}{\ttfamily [protected]}}
+
+Handle for managing the attack timer. \Hypertarget{class_a_enemy_a9cf4934085ad018e693c984c531a4be5}\index{AEnemy@{AEnemy}!CurrentHealth@{CurrentHealth}}
+\index{CurrentHealth@{CurrentHealth}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{CurrentHealth}{CurrentHealth}}
+{\footnotesize\ttfamily \label{class_a_enemy_a9cf4934085ad018e693c984c531a4be5} 
+int32 AEnemy\+::\+Current\+Health = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+Current health value, replicated using On\+Rep\+\_\+\+Health. \Hypertarget{class_a_enemy_a84a37ec55e93fe53d47c9b336fd878fb}\index{AEnemy@{AEnemy}!DamageCap@{DamageCap}}
+\index{DamageCap@{DamageCap}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{DamageCap}{DamageCap}}
+{\footnotesize\ttfamily \label{class_a_enemy_a84a37ec55e93fe53d47c9b336fd878fb} 
+int32 AEnemy\+::\+Damage\+Cap = 2000\hspace{0.3cm}{\ttfamily [protected]}}
+
+Maximum cap for attack damage after scaling. \Hypertarget{class_a_enemy_adbc23d7c2880514474b90ff4472bc46a}\index{AEnemy@{AEnemy}!DamagePctPerWave@{DamagePctPerWave}}
+\index{DamagePctPerWave@{DamagePctPerWave}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{DamagePctPerWave}{DamagePctPerWave}}
+{\footnotesize\ttfamily \label{class_a_enemy_adbc23d7c2880514474b90ff4472bc46a} 
+float AEnemy\+::\+Damage\+Pct\+Per\+Wave = 0.\+15f\hspace{0.3cm}{\ttfamily [protected]}}
+
+Damage increase per wave (percentage). \Hypertarget{class_a_enemy_a500b8ec9443efab902b845644cc8834a}\index{AEnemy@{AEnemy}!HealthPctPerWave@{HealthPctPerWave}}
+\index{HealthPctPerWave@{HealthPctPerWave}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{HealthPctPerWave}{HealthPctPerWave}}
+{\footnotesize\ttfamily \label{class_a_enemy_a500b8ec9443efab902b845644cc8834a} 
+float AEnemy\+::\+Health\+Pct\+Per\+Wave = 0.\+20f\hspace{0.3cm}{\ttfamily [protected]}}
+
+Health increase per wave (percentage). \Hypertarget{class_a_enemy_a911942ae9042b04919154b620f2fe27d}\index{AEnemy@{AEnemy}!LastDamageInstigator@{LastDamageInstigator}}
+\index{LastDamageInstigator@{LastDamageInstigator}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{LastDamageInstigator}{LastDamageInstigator}}
+{\footnotesize\ttfamily \label{class_a_enemy_a911942ae9042b04919154b620f2fe27d} 
+AController\texorpdfstring{$\ast$}{*} AEnemy\+::\+Last\+Damage\+Instigator = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+Reference to the controller that last damaged the enemy. \Hypertarget{class_a_enemy_a5df1a51abbcec8cba9a5d8907809cbd4}\index{AEnemy@{AEnemy}!MaxHealth@{MaxHealth}}
+\index{MaxHealth@{MaxHealth}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{MaxHealth}{MaxHealth}}
+{\footnotesize\ttfamily \label{class_a_enemy_a5df1a51abbcec8cba9a5d8907809cbd4} 
+int32 AEnemy\+::\+Max\+Health = 1000\hspace{0.3cm}{\ttfamily [protected]}}
+
+Maximum health of the enemy. \Hypertarget{class_a_enemy_abf6309339d906ad8264e7d83589b8965}\index{AEnemy@{AEnemy}!MaxHealthCap@{MaxHealthCap}}
+\index{MaxHealthCap@{MaxHealthCap}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{MaxHealthCap}{MaxHealthCap}}
+{\footnotesize\ttfamily \label{class_a_enemy_abf6309339d906ad8264e7d83589b8965} 
+int32 AEnemy\+::\+Max\+Health\+Cap = 10000\hspace{0.3cm}{\ttfamily [protected]}}
+
+Maximum cap for health after scaling. \Hypertarget{class_a_enemy_ac0a6a640e1de93e48464ae152bb35433}\index{AEnemy@{AEnemy}!MoneyReward@{MoneyReward}}
+\index{MoneyReward@{MoneyReward}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{MoneyReward}{MoneyReward}}
+{\footnotesize\ttfamily \label{class_a_enemy_ac0a6a640e1de93e48464ae152bb35433} 
+int32 AEnemy\+::\+Money\+Reward = 10\hspace{0.3cm}{\ttfamily [protected]}}
+
+Reward money for killing this enemy. \Hypertarget{class_a_enemy_a016b75b460707f453651c8308ef5d45a}\index{AEnemy@{AEnemy}!MoveSpeed@{MoveSpeed}}
+\index{MoveSpeed@{MoveSpeed}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{MoveSpeed}{MoveSpeed}}
+{\footnotesize\ttfamily \label{class_a_enemy_a016b75b460707f453651c8308ef5d45a} 
+float AEnemy\+::\+Move\+Speed = 400.f\hspace{0.3cm}{\ttfamily [protected]}}
+
+Movement speed of the enemy. \Hypertarget{class_a_enemy_a7ea9d4a636b74d30bec64cae28171a7b}\index{AEnemy@{AEnemy}!OnDeathEvt@{OnDeathEvt}}
+\index{OnDeathEvt@{OnDeathEvt}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{OnDeathEvt}{OnDeathEvt}}
+{\footnotesize\ttfamily \label{class_a_enemy_a7ea9d4a636b74d30bec64cae28171a7b} 
+FOn\+Enemy\+Death AEnemy\+::\+On\+Death\+Evt}
+
+Event triggered when enemy dies. \Hypertarget{class_a_enemy_ab79212dc6ec8d2308c741afc53f2fc1c}\index{AEnemy@{AEnemy}!OnHealthChanged@{OnHealthChanged}}
+\index{OnHealthChanged@{OnHealthChanged}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{OnHealthChanged}{OnHealthChanged}}
+{\footnotesize\ttfamily \label{class_a_enemy_ab79212dc6ec8d2308c741afc53f2fc1c} 
+FOn\+Enemy\+Health\+Changed AEnemy\+::\+On\+Health\+Changed}
+
+Event triggered when enemy health changes. \Hypertarget{class_a_enemy_a823666051777badb329d3fbcd1371329}\index{AEnemy@{AEnemy}!TargetActor@{TargetActor}}
+\index{TargetActor@{TargetActor}!AEnemy@{AEnemy}}
+\doxysubsubsection{\texorpdfstring{TargetActor}{TargetActor}}
+{\footnotesize\ttfamily \label{class_a_enemy_a823666051777badb329d3fbcd1371329} 
+AActor\texorpdfstring{$\ast$}{*} AEnemy\+::\+Target\+Actor = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+Target actor to move towards (e.\+g., the base). 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_enemy_8h}{Enemy.\+h}}\end{DoxyCompactItemize}

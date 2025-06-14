@@ -1,0 +1,31 @@
+\doxysection{Enemy\+Armored.\+h}
+\hypertarget{_enemy_armored_8h_source}{}\label{_enemy_armored_8h_source}\mbox{\hyperlink{_enemy_armored_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_enemy_8h}{Enemy.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}EnemyArmored.generated.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00016\ UCLASS()}
+\DoxyCodeLine{00017\ class\ MYPROJECT\_API\ \mbox{\hyperlink{class_a_enemy_armored_a99be826e1e7542ba2130b525de2b856b}{AEnemyArmored}}\ :\ public\ \mbox{\hyperlink{class_a_enemy_a78162cd7740ff2a86ba73ced9a4ae9be}{AEnemy}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_a_enemy_armored_ab68a860416d67fb1974caededb4f251c}{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_OneParam}}(FOnArmorChanged,\ int32,\ NewArmor);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ UPROPERTY(BlueprintAssignable,\ Category\ =\ \textcolor{stringliteral}{"{}Enemy|Events"{}})}
+\DoxyCodeLine{00030\ \ \ \ \ FOnArmorChanged\ \mbox{\hyperlink{class_a_enemy_armored_aa2a267561d886757e4a7f3fb245adae2}{OnArmorChanged}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_a_enemy_armored_a99be826e1e7542ba2130b525de2b856b}{AEnemyArmored}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00041\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_enemy_armored_ae59e25f8a61429b58a7f3bed33c9aebf}{ReceiveDamage}}(int32\ Amount,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AController*\ DamageInstigator\ =\ \textcolor{keywordtype}{nullptr})\ override;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ protected:}
+\DoxyCodeLine{00051\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_enemy_armored_a5501c2d6f7ae839fbc91a527329c9cae}{ApplyDifficultyScaling}}(int32\ WaveIndex,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ StrengthMultiplier\ =\ 1.f)\ override;}
+\DoxyCodeLine{00053\ \};}
+
+\end{DoxyCode}

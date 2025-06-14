@@ -12,20 +12,20 @@ AEnemy::AEnemy()
     PrimaryActorTick.bCanEverTick = false;
     AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
     SetReplicates(true);
-    CurrentHealth = MaxHealth;            // моментальный full-HP
+    CurrentHealth = MaxHealth;            
 }
 
 void AEnemy::BeginPlay()
 {
     Super::BeginPlay();
 
-    // Настраиваем скорость
+   
     if (UCharacterMovementComponent* MoveComp = GetCharacterMovement())
     {
         MoveComp->MaxWalkSpeed = MoveSpeed;
     }
 
-    // Цель слежения (если не задана вручную)
+    
     if (!TargetActor)
     {
         TargetActor = UGameplayStatics::GetActorOfClass(GetWorld(), ABase::StaticClass());

@@ -1,0 +1,51 @@
+\doxysection{My\+Project\+Player\+Controller.\+h}
+\hypertarget{_my_project_player_controller_8h_source}{}\label{_my_project_player_controller_8h_source}\mbox{\hyperlink{_my_project_player_controller_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GameFramework/PlayerController.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \mbox{\hyperlink{_my_project_player_controller_8h_a3d9b711117d2818fc197e0731bacb5a6}{DECLARE\_LOG\_CATEGORY\_EXTERN}}(LogMyPlayerController,\ Log,\ All);}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Templates/SubclassOf.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}MyProjectPlayerController.generated.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }UInputMappingContext;}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }UInputAction;}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }UNiagaraSystem;}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_a_tower}{ATower}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00025\ UCLASS()}
+\DoxyCodeLine{00026\ class\ MYPROJECT\_API\ \mbox{\hyperlink{class_a_my_project_player_controller_a756ccee3c3fba7f7bc503aadfbdc6314}{AMyProjectPlayerController}}\ :\ public\ APlayerController}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_a_my_project_player_controller_a756ccee3c3fba7f7bc503aadfbdc6314}{AMyProjectPlayerController}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ UPROPERTY(EditAnywhere,\ BlueprintReadWrite,\ Category\ =\ \textcolor{stringliteral}{"{}Tower"{}})}
+\DoxyCodeLine{00039\ \ \ \ \ TSubclassOf<\mbox{\hyperlink{class_a_tower}{ATower}}>\ \mbox{\hyperlink{class_a_my_project_player_controller_a13be81f33ccf6cc205bbbbe4ad36a1f0}{TowerToSpawn}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ UPROPERTY(EditAnywhere,\ BlueprintReadOnly,\ Category\ =\ \textcolor{stringliteral}{"{}Input"{}})}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_a_my_project_player_controller_a778ddd56f75473dfda54ad9ca74e21fe}{ShortPressThreshold}}\ =\ 0.2f;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \ \ \ \ UPROPERTY(EditAnywhere,\ BlueprintReadOnly,\ Category\ =\ \textcolor{stringliteral}{"{}FX"{}})}
+\DoxyCodeLine{00051\ \ \ \ \ UNiagaraSystem*\ \mbox{\hyperlink{class_a_my_project_player_controller_a5352fcfdf6fddd188a88710fd5665990}{FXCursor}}\ =\ \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ protected:}
+\DoxyCodeLine{00058\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_a_my_project_player_controller_a9ee67e7bb0cf0e541f4b43489411ff6a}{SetupInputComponent}}()\ override;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ Category\ =\ \textcolor{stringliteral}{"{}Input"{}},\ meta\ =\ (AllowPrivateAccess\ =\ \textcolor{stringliteral}{"{}true"{}}))}
+\DoxyCodeLine{00064\ \ \ \ \ UInputMappingContext*\ \mbox{\hyperlink{class_a_my_project_player_controller_a84a9a38de1bc28666df0598aca0fde40}{DefaultMappingContext}}\ =\ \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ Category\ =\ \textcolor{stringliteral}{"{}Input"{}},\ meta\ =\ (AllowPrivateAccess\ =\ \textcolor{stringliteral}{"{}true"{}}))}
+\DoxyCodeLine{00070\ \ \ \ \ UInputAction*\ \mbox{\hyperlink{class_a_my_project_player_controller_a9dc453b7e9486c155052a4ea4445f311}{SpawnTowerAction}}\ =\ \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ private:}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ HandleSpawnTower();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{bool}\ TryGetCursorLocation(FVector\&\ OutLocation)\ const;}
+\DoxyCodeLine{00086\ \};}
+
+\end{DoxyCode}

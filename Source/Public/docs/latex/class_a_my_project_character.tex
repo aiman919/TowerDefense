@@ -1,0 +1,83 @@
+\doxysection{AMy\+Project\+Character Class Reference}
+\hypertarget{class_a_my_project_character}{}\label{class_a_my_project_character}\index{AMyProjectCharacter@{AMyProjectCharacter}}
+
+
+Top-\/down playable character with a spring-\/arm mounted camera.  
+
+
+
+
+{\ttfamily \#include $<$My\+Project\+Character.\+h$>$}
+
+Inheritance diagram for AMy\+Project\+Character\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_my_project_character}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a_my_project_character_a30e19ba209e355ebbeffe6b52f1fca9c}{AMy\+Project\+Character}} ()
+\item 
+FORCEINLINE UCamera\+Component \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_a_my_project_character_ad0bdbea695029560ad431172ea5dace4}{Get\+Top\+Down\+Camera\+Component}} () const
+\begin{DoxyCompactList}\small\item\em Returns the top-\/down camera component. \end{DoxyCompactList}\item 
+FORCEINLINE USpring\+Arm\+Component \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_a_my_project_character_abcb7d8e6fb0cf7bf7f1500c869874d6f}{Get\+Camera\+Boom}} () const
+\begin{DoxyCompactList}\small\item\em Returns the spring arm component that positions the camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Top-\/down playable character with a spring-\/arm mounted camera. 
+
+Design notes\+:
+\begin{DoxyItemize}
+\item Tick is disabled to save performance as no per-\/frame logic exists yet.
+\item Public getters are exposed for Blueprint and UI use.
+\item Components are initialized directly at declaration (C++17 style). 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_a_my_project_character_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_a_my_project_character_a30e19ba209e355ebbeffe6b52f1fca9c}\index{AMyProjectCharacter@{AMyProjectCharacter}!AMyProjectCharacter@{AMyProjectCharacter}}
+\index{AMyProjectCharacter@{AMyProjectCharacter}!AMyProjectCharacter@{AMyProjectCharacter}}
+\doxysubsubsection{\texorpdfstring{AMyProjectCharacter()}{AMyProjectCharacter()}}
+{\footnotesize\ttfamily \label{class_a_my_project_character_a30e19ba209e355ebbeffe6b52f1fca9c} 
+AMy\+Project\+Character\+::\+AMy\+Project\+Character (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Default constructor. Sets up camera and spring arm components. 
+
+\label{doc-func-members}
+\Hypertarget{class_a_my_project_character_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_a_my_project_character_abcb7d8e6fb0cf7bf7f1500c869874d6f}\index{AMyProjectCharacter@{AMyProjectCharacter}!GetCameraBoom@{GetCameraBoom}}
+\index{GetCameraBoom@{GetCameraBoom}!AMyProjectCharacter@{AMyProjectCharacter}}
+\doxysubsubsection{\texorpdfstring{GetCameraBoom()}{GetCameraBoom()}}
+{\footnotesize\ttfamily \label{class_a_my_project_character_abcb7d8e6fb0cf7bf7f1500c869874d6f} 
+FORCEINLINE USpring\+Arm\+Component \texorpdfstring{$\ast$}{*} AMy\+Project\+Character\+::\+Get\+Camera\+Boom (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the spring arm component that positions the camera. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the USpring\+Arm\+Component. 
+\end{DoxyReturn}
+\Hypertarget{class_a_my_project_character_ad0bdbea695029560ad431172ea5dace4}\index{AMyProjectCharacter@{AMyProjectCharacter}!GetTopDownCameraComponent@{GetTopDownCameraComponent}}
+\index{GetTopDownCameraComponent@{GetTopDownCameraComponent}!AMyProjectCharacter@{AMyProjectCharacter}}
+\doxysubsubsection{\texorpdfstring{GetTopDownCameraComponent()}{GetTopDownCameraComponent()}}
+{\footnotesize\ttfamily \label{class_a_my_project_character_ad0bdbea695029560ad431172ea5dace4} 
+FORCEINLINE UCamera\+Component \texorpdfstring{$\ast$}{*} AMy\+Project\+Character\+::\+Get\+Top\+Down\+Camera\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the top-\/down camera component. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the UCamera\+Component. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_my_project_character_8h}{My\+Project\+Character.\+h}}\end{DoxyCompactItemize}
